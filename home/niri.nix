@@ -32,6 +32,7 @@
     prefer-no-csd
 
     layout {
+      background-color "#141414"
       gaps 16
       center-focused-column "never"
 
@@ -48,11 +49,19 @@
       focus-ring {
         width 2
         active-color "#c0c0c0"
-        inactive-color "#4a4a4a"
+        inactive-color "#2a2a2a"
       }
 
       border {
         off
+      }
+
+      shadow {
+        on
+        softness 40
+        spread 2
+        offset x=0 y=4
+        color "#00000060"
       }
     }
 

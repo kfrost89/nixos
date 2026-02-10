@@ -78,6 +78,7 @@
       ./home/impala.nix
       ./home/swaylock.nix
       ./home/swayidle.nix
+      ./home/fuzzel.nix
     ];
   };
 }

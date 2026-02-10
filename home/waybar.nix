@@ -6,8 +6,8 @@
     settings = [{
       layer = "top";
       position = "top";
-      height = 32;
-      margin-top = 6;
+      height = 34;
+      margin-top = 8;
       margin-left = 300;
       margin-right = 300;
       spacing = 0;
@@ -26,7 +26,7 @@
 
       battery = {
         format = "{capacity}%";
-        format-charging = "CHG {capacity}%";
+        format-charging = "+ {capacity}%";
         states = {
           warning = 20;
           critical = 10;
@@ -34,22 +34,22 @@
       };
 
       network = {
-        format-wifi = "W {essid}";
-        format-ethernet = "E {ifname}";
+        format-wifi = "{essid}";
+        format-ethernet = "eth";
         format-disconnected = "offline";
       };
 
       wireplumber = {
-        format = "VOL {volume}%";
-        format-muted = "MUTE";
+        format = "{volume}%";
+        format-muted = "mute";
         on-click = "pavucontrol";
       };
     }];
 
     style = ''
       * {
-        font-family: "Hack Nerd Font";
-        font-size: 12px;
+        font-family: "Hack Nerd Font", "Hack";
+        font-size: 11px;
         border: none;
         border-radius: 0;
         min-height: 0;
@@ -58,54 +58,68 @@
       }
 
       window#waybar {
-        background: rgba(20, 20, 20, 0.9);
-        border-radius: 16px;
-        color: #b0b0b0;
+        background: #141414;
+        border-radius: 14px;
+        border: 1px solid #2a2a2a;
+        color: #888888;
       }
 
       tooltip {
         background: #1a1a1a;
-        border: 1px solid #333333;
+        border: 1px solid #2a2a2a;
         border-radius: 8px;
-        color: #b0b0b0;
+        color: #c0c0c0;
       }
 
       #workspaces {
-        margin: 0 4px;
+        margin-left: 6px;
       }
 
       #workspaces button {
-        padding: 2px 8px;
-        color: #555555;
+        padding: 4px 8px;
+        color: #4a4a4a;
         background: transparent;
+        border-radius: 10px;
+        transition: all 0.2s ease;
       }
 
       #workspaces button.active {
-        color: #ffffff;
+        color: #e0e0e0;
+        background: #2a2a2a;
       }
 
       #clock {
-        padding: 0 12px;
-        color: #e0e0e0;
+        padding: 0 14px;
+        color: #c0c0c0;
+        letter-spacing: 0.5px;
       }
 
       #battery,
       #network,
       #wireplumber {
         padding: 0 10px;
-        color: #888888;
+        color: #666666;
+        transition: color 0.2s ease;
       }
 
       #battery.charging {
-        color: #b0b0b0;
+        color: #999999;
       }
 
       #battery.warning:not(.charging) {
-        color: #cccccc;
+        color: #b0b0b0;
       }
 
       #battery.critical:not(.charging) {
-        color: #ffffff;
+        color: #e0e0e0;
+      }
+
+      #network.disconnected {
+        color: #3a3a3a;
+      }
+
+      #wireplumber.muted {
+        color: #3a3a3a;
       }
     '';
   };
