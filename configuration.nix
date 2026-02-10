@@ -86,7 +86,7 @@
 
   fonts.packages = [
     pkgs.hack-font
-    (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
+    pkgs.nerd-fonts.hack
   ];
   environment.variables.XCURSOR_THEME = "Adwaita";
   environment.variables.XCURSOR_SIZE = "24";
@@ -99,5 +99,5 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.11";
 }

@@ -192,7 +192,7 @@
       Alt+Print { screenshot-window; }
 
       // Clipboard history
-      Mod+Shift+V { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+      Mod+Shift+C { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
 
       // Media keys
       XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+" "-l" "1.0"; }

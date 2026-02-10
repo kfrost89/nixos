@@ -6,7 +6,7 @@
   home-manager.backupFileExtension = "backup";
 
   home-manager.users.frozt = {
-    home.stateVersion = "24.11";
+    home.stateVersion = "25.11";
 
     home.pointerCursor = {
       name = "Adwaita";
