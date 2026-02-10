@@ -2,9 +2,9 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "eza --icons";
-      ll = "eza -la --icons";
-      lt = "eza --tree --icons";
+      ls = "eza";
+      ll = "eza -la";
+      lt = "eza --tree";
       cat = "bat";
       ".." = "cd ..";
       "..." = "cd ../..";

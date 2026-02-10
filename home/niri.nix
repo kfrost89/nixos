@@ -29,10 +29,14 @@
       xcursor-theme "Adwaita"
     }
 
+    animations {
+      off
+    }
+
     prefer-no-csd
 
     layout {
-      background-color "#282828"
+      background-color "#363636"
       gaps 16
       center-focused-column "never"
 

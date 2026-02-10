@@ -6,10 +6,10 @@
     settings = [{
       layer = "top";
       position = "top";
-      height = 34;
+      height = 40;
       margin-top = 8;
-      margin-left = 300;
-      margin-right = 300;
+      margin-left = 250;
+      margin-right = 250;
       spacing = 0;
       reload_style_on_change = true;
 
@@ -49,7 +49,7 @@
     style = ''
       * {
         font-family: "Hack Nerd Font", "Hack";
-        font-size: 11px;
+        font-size: 12px;
         border: none;
         border-radius: 0;
         min-height: 0;
@@ -76,7 +76,7 @@
       }
 
       #workspaces button {
-        padding: 4px 8px;
+        padding: 6px 10px;
         color: #585858;
         background: transparent;
         border-radius: 10px;
@@ -84,12 +84,12 @@
       }
 
       #workspaces button.active {
-        color: #f0f0f0;
-        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        background: transparent;
       }
 
       #clock {
-        padding: 0 14px;
+        padding: 0 16px;
         color: #e0e0e0;
         letter-spacing: 0.5px;
       }
@@ -97,7 +97,7 @@
       #battery,
       #network,
       #wireplumber {
-        padding: 0 10px;
+        padding: 0 12px;
         color: #888888;
         transition: color 0.2s ease;
       }
