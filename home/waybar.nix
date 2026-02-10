@@ -1,78 +1,82 @@
 {
   programs.waybar = {
     enable = true;
-    settings = {
-      mainBar = {
-        layer = "top";
-        position = "top";
-        height = 34;
-        margin-top = 6;
-        margin-left = 200;
-        margin-right = 200;
-        modules-left = [ "niri/workspaces" ];
-        modules-center = [ "clock" ];
-        modules-right = [ "network" "pulseaudio" "battery" ];
+    systemd.enable = false;
 
-        "niri/workspaces" = {
-          format = "{icon}";
-          format-icons = {
-            active = "●";
-            default = "○";
-          };
-        };
+    settings = [{
+      layer = "top";
+      position = "top";
+      height = 32;
+      margin-top = 6;
+      margin-left = 300;
+      margin-right = 300;
+      spacing = 0;
+      reload_style_on_change = true;
 
-        clock = {
-          format = "{:%H:%M}";
-          format-alt = "{:%a %d %b}";
-          tooltip-format = "{:%Y-%m-%d | %H:%M:%S}";
-        };
+      modules-left = [ "niri/workspaces" ];
+      modules-center = [ "clock" ];
+      modules-right = [ "network" "wireplumber" "battery" ];
 
-        battery = {
-          format = "{icon} {capacity}%";
-          format-icons = [ "○" "◔" "◑" "◕" "●" ];
-          format-charging = "↑ {capacity}%";
-          states = {
-            warning = 20;
-            critical = 10;
-          };
-        };
+      "niri/workspaces" = {};
 
-        network = {
-          format-wifi = "● {essid}";
-          format-disconnected = "○ offline";
-          tooltip-format = "{ipaddr}";
-        };
+      clock = {
+        format = "{:%H:%M}";
+        format-alt = "{:%a %d %b}";
+      };
 
-        pulseaudio = {
-          format = "♪ {volume}%";
-          format-muted = "♪ mute";
-          on-click = "pavucontrol";
+      battery = {
+        format = "{capacity}%";
+        format-charging = "CHG {capacity}%";
+        states = {
+          warning = 20;
+          critical = 10;
         };
       };
-    };
+
+      network = {
+        format-wifi = "W {essid}";
+        format-ethernet = "E {ifname}";
+        format-disconnected = "offline";
+      };
+
+      wireplumber = {
+        format = "VOL {volume}%";
+        format-muted = "MUTE";
+        on-click = "pavucontrol";
+      };
+    }];
 
     style = ''
       * {
-        font-family: "JetBrains Mono";
+        font-family: "Hack Nerd Font";
         font-size: 12px;
         border: none;
+        border-radius: 0;
         min-height: 0;
+        margin: 0;
+        padding: 0;
       }
 
       window#waybar {
-        background-color: rgba(26, 26, 26, 0.92);
-        border-radius: 20px;
-        color: #c0c0c0;
+        background: rgba(20, 20, 20, 0.9);
+        border-radius: 16px;
+        color: #b0b0b0;
+      }
+
+      tooltip {
+        background: #1a1a1a;
+        border: 1px solid #333333;
+        border-radius: 8px;
+        color: #b0b0b0;
       }
 
       #workspaces {
-        margin-left: 8px;
+        margin: 0 4px;
       }
 
       #workspaces button {
-        color: #4a4a4a;
-        padding: 0 6px;
-        border-radius: 20px;
+        padding: 2px 8px;
+        color: #555555;
         background: transparent;
       }
 
@@ -81,25 +85,27 @@
       }
 
       #clock {
-        color: #ffffff;
-        font-weight: bold;
-      }
-
-      #battery, #network, #pulseaudio {
         padding: 0 12px;
-        color: #909090;
+        color: #e0e0e0;
       }
 
-      #battery.warning {
-        color: #c0c0c0;
+      #battery,
+      #network,
+      #wireplumber {
+        padding: 0 10px;
+        color: #888888;
       }
 
-      #battery.critical {
+      #battery.charging {
+        color: #b0b0b0;
+      }
+
+      #battery.warning:not(.charging) {
+        color: #cccccc;
+      }
+
+      #battery.critical:not(.charging) {
         color: #ffffff;
-      }
-
-      #network.disconnected {
-        color: #4a4a4a;
       }
     '';
   };

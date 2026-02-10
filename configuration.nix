@@ -84,7 +84,10 @@
     cliphist        # clipboard history
   ];
 
-  fonts.packages = [ pkgs.jetbrains-mono ];
+  fonts.packages = [
+    pkgs.hack-font
+    (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
+  ];
   environment.variables.XCURSOR_THEME = "Adwaita";
   environment.variables.XCURSOR_SIZE = "24";
 

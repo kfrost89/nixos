@@ -8,6 +8,13 @@
   home-manager.users.frozt = {
     home.stateVersion = "24.11";
 
+    home.pointerCursor = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+      size = 24;
+      gtk.enable = true;
+    };
+
     gtk = {
       enable = true;
       theme.name = "adw-gtk3-dark";
@@ -25,6 +32,7 @@
       ./home/waybar.nix
       ./home/mako.nix
       ./home/starship.nix
+      ./home/impala.nix
       ./home/swaylock.nix
       ./home/swayidle.nix
     ];

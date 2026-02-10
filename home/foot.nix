@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrains Mono:size=11";
+        font = "Hack:size=11";
       };
       colors = {
         background = "1a1a1a";
