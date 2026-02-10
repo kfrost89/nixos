@@ -1,28 +1,29 @@
+{ ... }:
+
 {
   xdg.configFile."impala/config.toml".text = ''
-switch = "r"
-mode = "station"
-esc_quit = true
+    switch = "r"
+    mode = "station"
+    esc_quit = true
 
-[device]
-infos = "i"
-toggle_power = "o"
+    [device]
+    infos = "i"
+    toggle_power = "o"
 
-[access_point]
-start = "n"
-stop = "x"
+    [access_point]
+    start = "n"
+    stop = "x"
 
-[station]
-toggle_scanning = "s"
+    [station]
+    toggle_scanning = "s"
 
-[station.known_network]
-toggle_autoconnect = "t"
-remove = "d"
-show_all = "a"
-share = "p"
+    [station.known_network]
+    toggle_autoconnect = "t"
+    remove = "d"
+    show_all = "a"
+    share = "p"
 
-[station.new_network]
-show_all = "a"
-connect_hidden = ""
+    [station.new_network]
+    show_all = "a"
   '';
 }

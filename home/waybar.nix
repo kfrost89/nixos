@@ -58,15 +58,15 @@
       }
 
       window#waybar {
-        background: #0e0e0e;
+        background: rgba(0, 0, 0, 0.85);
         border-radius: 14px;
-        border: 1px solid #2a2a2a;
+        border: none;
         color: #a0a0a0;
       }
 
       tooltip {
-        background: #0e0e0e;
-        border: 1px solid #2a2a2a;
+        background: rgba(0, 0, 0, 0.9);
+        border: none;
         border-radius: 8px;
         color: #e0e0e0;
       }
@@ -85,7 +85,7 @@
 
       #workspaces button.active {
         color: #f0f0f0;
-        background: #252525;
+        background: rgba(255, 255, 255, 0.08);
       }
 
       #clock {
