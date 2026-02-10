@@ -8,41 +8,80 @@
       position = "top";
       height = 40;
       margin-top = 8;
-      margin-left = 250;
-      margin-right = 250;
+      margin-left = 200;
+      margin-right = 200;
       spacing = 0;
       reload_style_on_change = true;
 
-      modules-left = [ "niri/workspaces" ];
+      modules-left = [ "niri/workspaces" "mpris" ];
       modules-center = [ "clock" ];
-      modules-right = [ "network" "wireplumber" "battery" ];
+      modules-right = [ "idle_inhibitor" "cpu" "memory" "disk" "network" "wireplumber" "battery" ];
 
       "niri/workspaces" = {};
 
-      clock = {
-        format = "{:%H:%M}";
-        format-alt = "{:%a %d %b}";
+      mpris = {
+        format = "{title} — {artist}";
+        format-paused = "{title} — {artist} (paused)";
+        format-stopped = "";
+        max-length = 40;
+        tooltip = false;
       };
 
-      battery = {
-        format = "{capacity}%";
-        format-charging = "+ {capacity}%";
-        states = {
-          warning = 20;
-          critical = 10;
+      clock = {
+        format = "{:%H:%M}";
+        format-alt = "w{:%V · %d %b}";
+        tooltip-format = "{:%A %d %B %Y · Week %V}";
+      };
+
+      idle_inhibitor = {
+        format = "{icon}";
+        format-icons = {
+          activated = "idle off";
+          deactivated = "idle on";
         };
+        tooltip-format-activated = "Idle inhibitor active";
+        tooltip-format-deactivated = "Idle inhibitor inactive";
+      };
+
+      cpu = {
+        format = "cpu {usage}%";
+        interval = 5;
+        on-click = "foot btop";
+      };
+
+      memory = {
+        format = "mem {used:0.1f}G";
+        interval = 5;
+        on-click = "foot btop";
+      };
+
+      disk = {
+        format = "disk {percentage_used}%";
+        interval = 30;
+        path = "/";
+        on-click = "nautilus";
       };
 
       network = {
         format-wifi = "{essid}";
         format-ethernet = "eth";
         format-disconnected = "offline";
+        on-click = "foot impala";
       };
 
       wireplumber = {
         format = "{volume}%";
         format-muted = "mute";
         on-click = "pavucontrol";
+      };
+
+      battery = {
+        format = "bat {capacity}%";
+        format-charging = "bat +{capacity}%";
+        states = {
+          warning = 20;
+          critical = 10;
+        };
       };
     }];
 
@@ -76,7 +115,7 @@
       }
 
       #workspaces button {
-        padding: 6px 10px;
+        padding: 6px 5px;
         color: #585858;
         background: transparent;
         border-radius: 10px;
@@ -88,10 +127,47 @@
         background: transparent;
       }
 
+      #mpris {
+        padding: 0 12px;
+        color: #707070;
+        font-style: italic;
+      }
+
+      #mpris.playing {
+        color: #b0b0b0;
+      }
+
+      #mpris.paused {
+        color: #585858;
+      }
+
       #clock {
         padding: 0 16px;
         color: #e0e0e0;
         letter-spacing: 0.5px;
+      }
+
+      #idle_inhibitor {
+        padding: 0 10px;
+        color: #585858;
+      }
+
+      #idle_inhibitor.activated {
+        color: #e0e0e0;
+      }
+
+      #cpu,
+      #memory,
+      #disk {
+        padding: 0 10px;
+        color: #707070;
+        transition: color 0.2s ease;
+      }
+
+      #cpu:hover,
+      #memory:hover,
+      #disk:hover {
+        color: #e0e0e0;
       }
 
       #battery,

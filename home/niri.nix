@@ -89,6 +89,11 @@
       open-floating true
     }
 
+    window-rule {
+      match app-id="org.gnome.NautilusPreviewer"
+      open-floating true
+    }
+
     binds {
       // Apps
       Mod+T { spawn "foot"; }

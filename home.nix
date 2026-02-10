@@ -99,7 +99,6 @@
       ./home/waybar.nix
       ./home/mako.nix
       ./home/starship.nix
-      ./home/impala.nix
       ./home/swaylock.nix
       ./home/swayidle.nix
       ./home/fuzzel.nix
