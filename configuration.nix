@@ -4,11 +4,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "desktop";
-  networking.networkmanager.enable = true;
+  networking.wireless.iwd.enable = true;
 
   time.timeZone = "Europe/Copenhagen";
-  i18n.defaultLocale = "en_DK.UTF-8";
+  i18n.defaultLocale = "da_DK.UTF-8";
   console.keyMap = "dk";
 
   # Niri
@@ -29,14 +28,6 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
   };
 
-  # NVIDIA — remove this block if no NVIDIA
-  #services.xserver.videoDrivers = [ "nvidia" ];
-  #hardware.nvidia = {
-  #  modesetting.enable = true;
-  #  open = false;
-  #  nvidiaSettings = true;
-  #};
-
   # Sound
   services.pipewire = {
     enable = true;
@@ -44,14 +35,14 @@
     pulse.enable = true;
   };
 
-  # Fish
   programs.fish.enable = true;
+  programs.command-not-found.enable = false;
 
   # User
-  users.users.kristian = {
+  users.users.frozt = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" ];
     initialPassword = "changeme";
   };
 
@@ -69,9 +60,33 @@
     fuzzel
     mako
     wl-clipboard
-    #brightnessctl
-    #playerctl
+    impala
+
+    # utilities
+    eza
+    bat
+    fd
+    ripgrep
+    fzf
+    unzip
+
+    # file management
+    nautilus
+    udiskie
+
+    # wayland / niri
+    swww            # wallpaper
+    swaylock        # lock screen
+    swayidle        # idle management
+    brightnessctl   # backlight (x270)
+    playerctl       # media keys
+    pavucontrol     # audio GUI
+    cliphist        # clipboard history
   ];
+
+  fonts.packages = [ pkgs.jetbrains-mono ];
+  environment.variables.XCURSOR_THEME = "Adwaita";
+  environment.variables.XCURSOR_SIZE = "24";
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 

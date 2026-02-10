@@ -1,6 +1,7 @@
+{ disk, ... }:
 {
   disko.devices.disk.main = {
-    device = "/dev/nvme0n1";  # CHANGE THIS after checking lsblk
+    device = disk;
     type = "disk";
     content = {
       type = "gpt";
@@ -21,7 +22,7 @@
             type = "luks";
             name = "cryptroot";
             settings.allowDiscards = true;
-            passwordFile = "/tmp/disk-password";
+            passwordFile = "/tmp/disk-password";  # provided by nixos-anywhere --disk-encryption-keys
             content = {
               type = "btrfs";
               extraArgs = [ "-L" "nixos" ];
