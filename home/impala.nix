@@ -25,5 +25,6 @@
 
     [station.new_network]
     show_all = "a"
+    connect_hidden = ""
   '';
 }
