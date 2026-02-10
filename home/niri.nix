@@ -32,7 +32,7 @@
     prefer-no-csd
 
     layout {
-      background-color "#141414"
+      background-color "#1e1e1e"
       gaps 16
       center-focused-column "never"
 
@@ -48,8 +48,8 @@
 
       focus-ring {
         width 2
-        active-color "#d4d4d4"
-        inactive-color "#3a3a3a"
+        active-color "#e0e0e0"
+        inactive-color "#404040"
       }
 
       border {

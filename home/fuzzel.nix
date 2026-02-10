@@ -13,13 +13,13 @@
         inner-pad = 8;
       };
       colors = {
-        background = "1e1e1eee";
-        text = "d4d4d4ff";
+        background = "0e0e0eee";
+        text = "e0e0e0ff";
         match = "ffffffff";
-        selection = "333333ff";
+        selection = "2a2a2aff";
         selection-text = "ffffffff";
         selection-match = "ffffffff";
-        border = "505050ff";
+        border = "404040ff";
       };
       border = {
         width = 2;
