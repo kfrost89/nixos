@@ -14,7 +14,10 @@
 
   outputs = { nixpkgs, nixpkgs-unstable, disko, home-manager, ... }:
   let
-    unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+    unstable = import nixpkgs-unstable {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
+    };
   in {
     nixosConfigurations.x270 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
