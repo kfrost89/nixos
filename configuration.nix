@@ -109,6 +109,9 @@
     pavucontrol     # audio GUI
     cliphist        # clipboard history
 
+    # dev
+    nodejs
+
     # tools
     unstable.claude-code
     restic
