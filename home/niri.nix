@@ -99,21 +99,26 @@
 
       // Session
       Mod+Shift+E { quit; }
+      Ctrl+Alt+Delete { quit; }
       Mod+Shift+P { power-off-monitors; }
       Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
       Super+Alt+L { spawn "swaylock" "-f"; }
+      Mod+Shift+Slash { show-hotkey-overlay; }
 
       // Windows
       Mod+Q repeat=false { close-window; }
       Mod+F { maximize-column; }
       Mod+Shift+F { fullscreen-window; }
+      Mod+Ctrl+F { expand-column-to-available-width; }
       Mod+C { center-column; }
+      Mod+Ctrl+C { center-visible-columns; }
       Mod+M { maximize-window-to-edges; }
       Mod+V { toggle-window-floating; }
       Mod+Shift+V { switch-focus-between-floating-and-tiling; }
       Mod+W { toggle-column-tabbed-display; }
       Mod+R { switch-preset-column-width; }
       Mod+Shift+R { switch-preset-window-height; }
+      Mod+Ctrl+R { reset-window-height; }
 
       // Overview
       Mod+O repeat=false { toggle-overview; }
@@ -147,12 +152,20 @@
       Mod+Shift+Right { focus-monitor-right; }
       Mod+Shift+Up { focus-monitor-up; }
       Mod+Shift+Down { focus-monitor-down; }
+      Mod+Shift+H { focus-monitor-left; }
+      Mod+Shift+J { focus-monitor-down; }
+      Mod+Shift+K { focus-monitor-up; }
+      Mod+Shift+L { focus-monitor-right; }
 
       // Move to monitor
       Mod+Shift+Ctrl+Left { move-column-to-monitor-left; }
       Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
       Mod+Shift+Ctrl+Up { move-column-to-monitor-up; }
       Mod+Shift+Ctrl+Down { move-column-to-monitor-down; }
+      Mod+Shift+Ctrl+H { move-column-to-monitor-left; }
+      Mod+Shift+Ctrl+J { move-column-to-monitor-down; }
+      Mod+Shift+Ctrl+K { move-column-to-monitor-up; }
+      Mod+Shift+Ctrl+L { move-column-to-monitor-right; }
 
       // Workspaces
       Mod+1 { focus-workspace 1; }
@@ -177,14 +190,28 @@
 
       Mod+Page_Down { focus-workspace-down; }
       Mod+Page_Up { focus-workspace-up; }
+      Mod+U { focus-workspace-down; }
+      Mod+I { focus-workspace-up; }
       Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
       Mod+Ctrl+Page_Up { move-column-to-workspace-up; }
+      Mod+Ctrl+U { move-column-to-workspace-down; }
+      Mod+Ctrl+I { move-column-to-workspace-up; }
+      Mod+Shift+Page_Down { move-workspace-down; }
+      Mod+Shift+Page_Up { move-workspace-up; }
+      Mod+Shift+U { move-workspace-down; }
+      Mod+Shift+I { move-workspace-up; }
 
       // Scroll workspaces
       Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
       Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
       Mod+WheelScrollRight { focus-column-right; }
       Mod+WheelScrollLeft { focus-column-left; }
+      Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+      Mod+Ctrl+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
+      Mod+Ctrl+WheelScrollRight { move-column-right; }
+      Mod+Ctrl+WheelScrollLeft { move-column-left; }
+      Mod+Shift+WheelScrollDown { focus-column-right; }
+      Mod+Shift+WheelScrollUp { focus-column-left; }
 
       // Consume / expel
       Mod+BracketLeft { consume-or-expel-window-left; }
@@ -211,11 +238,12 @@
       XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
       XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
       XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-      XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
-      XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+      XF86AudioStop allow-when-locked=true { spawn "playerctl" "stop"; }
       XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; }
       XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
       XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
+      XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
+      XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
     }
   '';
 }
