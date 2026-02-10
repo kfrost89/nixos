@@ -57,9 +57,9 @@
     }
 
     spawn-at-startup "waybar"
-    spawn-at-startup "swww-daemon"
     spawn-at-startup "udiskie" "--automount"
     spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+    spawn-at-startup "/run/current-system/sw/libexec/polkit-gnome-authentication-agent-1"
 
     hotkey-overlay {
       skip-at-startup

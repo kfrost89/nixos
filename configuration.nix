@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, unstable, ... }:
 
 {
   boot.loader.systemd-boot.enable = true;
@@ -12,6 +12,7 @@
 
   # Niri
   programs.niri.enable = true;
+  programs.xwayland.enable = true;
 
   services.greetd = {
     enable = true;
@@ -25,8 +26,18 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
+
+  # Polkit authentication agent
+  security.polkit.enable = true;
+
+  # Keyring
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
 
   # Sound
   services.pipewire = {
@@ -49,9 +60,16 @@
   # SSH — needed for nixos-anywhere, disable later if you want
   services.openssh.enable = true;
 
+  # Nautilus integration
+  services.gvfs.enable = true;
+
   # Packages
   environment.systemPackages = with pkgs; [
     firefox
+    chromium
+    obsidian
+    signal-desktop
+    zed-editor
     git
     neovim
     btop
@@ -60,7 +78,6 @@
     fuzzel
     mako
     wl-clipboard
-    impala
 
     # utilities
     eza
@@ -72,16 +89,26 @@
 
     # file management
     nautilus
+    sushi           # file previewer for nautilus (spacebar)
     udiskie
 
+    # media
+    zathura         # PDF viewer
+    imv             # image viewer
+    mpv             # media player
+
     # wayland / niri
-    swww            # wallpaper
+    polkit_gnome    # authentication popups
     swaylock        # lock screen
     swayidle        # idle management
-    brightnessctl   # backlight (x270)
     playerctl       # media keys
     pavucontrol     # audio GUI
     cliphist        # clipboard history
+
+    # tools
+    unstable.claude-code
+    restic
+    solaar
   ];
 
   fonts.packages = [
@@ -91,12 +118,33 @@
   environment.variables.XCURSOR_THEME = "Adwaita";
   environment.variables.XCURSOR_SIZE = "24";
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    QT_QPA_PLATFORM = "wayland";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+  };
 
   services.btrfs.autoScrub = {
     enable = true;
     interval = "weekly";
   };
+
+  services.snapper = {
+    snapshotInterval = "hourly";
+    cleanupInterval = "1d";
+    configs.home = {
+      SUBVOLUME = "/home";
+      ALLOW_USERS = [ "frozt" ];
+      TIMELINE_CREATE = true;
+      TIMELINE_CLEANUP = true;
+      TIMELINE_LIMIT_HOURLY = "5";
+      TIMELINE_LIMIT_DAILY = "7";
+      TIMELINE_LIMIT_WEEKLY = "4";
+      TIMELINE_LIMIT_MONTHLY = "6";
+    };
+  };
+
+  hardware.logitech.wireless.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "25.11";

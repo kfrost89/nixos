@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,11 +12,15 @@
     };
   };
 
-  outputs = { nixpkgs, disko, home-manager, ... }: {
+  outputs = { nixpkgs, nixpkgs-unstable, disko, home-manager, ... }:
+  let
+    unstable = nixpkgs-unstable.legacyPackages.x86_64-linux;
+  in {
     nixosConfigurations.x270 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
         disk = "/dev/nvme0n1";
+        inherit unstable;
       };
       modules = [
         disko.nixosModules.disko
@@ -31,6 +36,7 @@
       system = "x86_64-linux";
       specialArgs = {
         disk = "/dev/nvme0n1";
+        inherit unstable;
       };
       modules = [
         disko.nixosModules.disko

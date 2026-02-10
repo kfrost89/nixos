@@ -27,4 +27,10 @@
     enable = true;
     emulateWheel = true;
   };
+
+  # x270-only packages
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+    impala
+  ];
 }

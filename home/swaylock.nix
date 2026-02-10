@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       color = "1a1a1a";
-      font = "JetBrains Mono";
+      font = "Hack";
       font-size = 14;
       inside-color = "1a1a1a";
       inside-clear-color = "1a1a1a";
