@@ -30,6 +30,7 @@
         home-manager.nixosModules.home-manager
         ./disko-config.nix
         ./hosts/x270/x270.nix
+        ./hosts/x270/hardware-configuration.nix
         ./configuration.nix
         ./home.nix
       ];

@@ -68,6 +68,8 @@
       };
     };
 
+    services.polkit-gnome.enable = true;
+
     imports = [
       ./home/foot.nix
       ./home/fish.nix

@@ -4,31 +4,29 @@
     settings = {
       main = {
         font = "Hack:size=11";
-        pad = "12x12";
+        pad = "12x12 center";
       };
       colors = {
         alpha = "0.95";
         background = "141414";
-        foreground = "c0c0c0";
-        regular0 = "1a1a1a";
-        regular1 = "888888";
-        regular2 = "999999";
-        regular3 = "aaaaaa";
-        regular4 = "777777";
-        regular5 = "888888";
-        regular6 = "999999";
-        regular7 = "c0c0c0";
-        bright0 = "4a4a4a";
-        bright1 = "aaaaaa";
-        bright2 = "bbbbbb";
-        bright3 = "cccccc";
-        bright4 = "999999";
-        bright5 = "aaaaaa";
-        bright6 = "bbbbbb";
+        foreground = "d4d4d4";
+        regular0 = "282828";
+        regular1 = "b0b0b0";
+        regular2 = "a0a0a0";
+        regular3 = "c8c8c8";
+        regular4 = "8a8a8a";
+        regular5 = "b0b0b0";
+        regular6 = "a0a0a0";
+        regular7 = "d4d4d4";
+        bright0 = "555555";
+        bright1 = "d0d0d0";
+        bright2 = "c0c0c0";
+        bright3 = "e0e0e0";
+        bright4 = "a8a8a8";
+        bright5 = "d0d0d0";
+        bright6 = "c0c0c0";
         bright7 = "ffffff";
-      };
-      cursor = {
-        color = "141414 c0c0c0";
+        cursor = "141414 d4d4d4";
       };
     };
   };

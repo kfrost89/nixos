@@ -48,8 +48,8 @@
 
       focus-ring {
         width 2
-        active-color "#c0c0c0"
-        inactive-color "#2a2a2a"
+        active-color "#d4d4d4"
+        inactive-color "#3a3a3a"
       }
 
       border {
@@ -68,7 +68,6 @@
     spawn-at-startup "waybar"
     spawn-at-startup "udiskie" "--automount"
     spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
-    spawn-at-startup "/run/current-system/sw/libexec/polkit-gnome-authentication-agent-1"
 
     hotkey-overlay {
       skip-at-startup

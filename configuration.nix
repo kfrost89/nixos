@@ -30,10 +30,14 @@
       pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
     ];
+    config.niri = {
+      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+    };
   };
 
   # Polkit authentication agent
   security.polkit.enable = true;
+  security.pam.services.swaylock = {};
 
   # Keyring
   services.gnome.gnome-keyring.enable = true;

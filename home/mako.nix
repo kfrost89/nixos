@@ -3,10 +3,10 @@
     enable = true;
     settings = {
       font = "Hack 11";
-      background-color = "#1a1a1aee";
-      text-color = "#c0c0c0";
-      border-color = "#2a2a2a";
-      progress-color = "over #4a4a4a";
+      background-color = "#1e1e1eee";
+      text-color = "#d4d4d4";
+      border-color = "#3a3a3a";
+      progress-color = "over #505050";
       border-radius = 12;
       border-size = 2;
       padding = "14";
@@ -19,8 +19,8 @@
       layer = "overlay";
 
       "[urgency=low]" = {
-        border-color = "#2a2a2a";
-        text-color = "#888888";
+        border-color = "#3a3a3a";
+        text-color = "#909090";
         default-timeout = 3000;
       };
 
