@@ -39,7 +39,7 @@
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
-        disk = "/dev/nvme0n1";
+        disk = "/dev/nvme1n1";
         inherit unstable;
       };
       modules = [
@@ -47,6 +47,7 @@
         home-manager.nixosModules.home-manager
         ./disko-config.nix
         ./hosts/desktop/desktop.nix
+        ./hosts/desktop/hardware-configuration.nix
         ./configuration.nix
         ./home.nix
       ];
