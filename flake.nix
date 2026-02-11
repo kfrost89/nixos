@@ -39,7 +39,7 @@
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
-        disk = "/dev/nvme1n1";
+        disk = "/dev/nvme0n1";
         inherit unstable;
       };
       modules = [
