@@ -2,8 +2,12 @@
 
 {
   xdg.configFile."espanso/config/default.yml".text = ''
-    backend: Clipboard
+    backend: Inject
     search_shortcut: ALT+SPACE
+    keyboard_layout:
+      rules: evdev
+      model: pc105
+      layout: dk
   '';
 
   xdg.configFile."espanso/match/base.yml".text = ''
@@ -14,13 +18,13 @@
       - trigger: ":name"
         replace: "Kristian Frost"
 
-      - trigger: ":date"
+      - trigger: ":today"
         replace: "{{date}}"
         vars:
           - name: date
             type: date
             params:
-              format: "%d-%m-%Y"
+              format: "%m-%d-%Y"
 
       - trigger: ":time"
         replace: "{{time}}"

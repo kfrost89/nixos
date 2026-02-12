@@ -57,7 +57,7 @@
   users.users.frozt = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "input" "uinput" ];
     initialPassword = "changeme";
   };
 
@@ -137,6 +137,21 @@
     pkgs.nerd-fonts.hack
     pkgs.inter
   ];
+
+  fonts.fontconfig = {
+    enable = true;
+    antialias = true;
+    hinting = {
+      enable = true;
+      style = "full";
+    };
+    subpixel.rgba = "rgb";
+    defaultFonts = {
+      sansSerif = [ "Inter" ];
+      monospace = [ "Hack Nerd Font" "Hack" ];
+      serif = [ "Inter" ];
+    };
+  };
   environment.variables.XCURSOR_THEME = "Adwaita";
   environment.variables.XCURSOR_SIZE = "24";
 
@@ -164,6 +179,15 @@
       TIMELINE_LIMIT_WEEKLY = "4";
       TIMELINE_LIMIT_MONTHLY = "6";
     };
+  };
+
+  # uinput + capabilities (needed for espanso-wayland)
+  hardware.uinput.enable = true;
+  security.wrappers.espanso = {
+    source = "${pkgs.espanso-wayland}/bin/espanso";
+    capabilities = "cap_dac_override+p";
+    owner = "root";
+    group = "root";
   };
 
   # Bluetooth

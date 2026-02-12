@@ -36,7 +36,7 @@
     prefer-no-csd
 
     layout {
-      background-color "#363636"
+      background-color "#707070"
       gaps 16
       center-focused-column "never"
 
@@ -78,6 +78,7 @@
     spawn-at-startup "udiskie" "--automount"
     spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
     spawn-at-startup "espanso" "daemon"
+    spawn-at-startup "solaar" "--window=hide"
 
     hotkey-overlay {
       skip-at-startup

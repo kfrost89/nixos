@@ -125,16 +125,13 @@
       vim.keymap.set('n', '<leader>fb', builtin.buffers)
 
       -- LSP setup
-      local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      lspconfig.astro.setup{ capabilities = capabilities }
-      lspconfig.ts_ls.setup{ capabilities = capabilities }
-      lspconfig.html.setup{ capabilities = capabilities }
-      lspconfig.cssls.setup{ capabilities = capabilities }
-      lspconfig.jsonls.setup{ capabilities = capabilities }
-      lspconfig.marksman.setup{ capabilities = capabilities }
-      lspconfig.nil_ls.setup{ capabilities = capabilities }
+      local servers = { 'astro', 'ts_ls', 'html', 'cssls', 'jsonls', 'marksman', 'nil_ls' }
+      for _, server in ipairs(servers) do
+        vim.lsp.config(server, { capabilities = capabilities })
+      end
+      vim.lsp.enable(servers)
 
       -- LSP keymaps
       vim.api.nvim_create_autocmd('LspAttach', {

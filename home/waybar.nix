@@ -100,7 +100,7 @@
         background: rgba(0, 0, 0, 0.85);
         border-radius: 14px;
         border: none;
-        color: #a0a0a0;
+        color: #e0e0e0;
       }
 
       tooltip {
@@ -116,7 +116,7 @@
 
       #workspaces button {
         padding: 6px 5px;
-        color: #585858;
+        color: #b0b0b0;
         background: transparent;
         border-radius: 10px;
         transition: all 0.2s ease;
@@ -129,16 +129,16 @@
 
       #mpris {
         padding: 0 12px;
-        color: #707070;
+        color: #b0b0b0;
         font-style: italic;
       }
 
       #mpris.playing {
-        color: #b0b0b0;
+        color: #d0d0d0;
       }
 
       #mpris.paused {
-        color: #585858;
+        color: #909090;
       }
 
       #clock {
@@ -149,18 +149,28 @@
 
       #idle_inhibitor {
         padding: 0 10px;
-        color: #585858;
+        color: #909090;
       }
 
       #idle_inhibitor.activated {
         color: #e0e0e0;
       }
 
-      #cpu,
-      #memory,
+      #cpu {
+        padding: 0 10px;
+        color: #c0c0c0;
+        transition: color 0.2s ease;
+      }
+
+      #memory {
+        padding: 0 10px;
+        color: #c0c0c0;
+        transition: color 0.2s ease;
+      }
+
       #disk {
         padding: 0 10px;
-        color: #707070;
+        color: #c0c0c0;
         transition: color 0.2s ease;
       }
 
@@ -170,32 +180,42 @@
         color: #e0e0e0;
       }
 
-      #battery,
-      #network,
+      #network {
+        padding: 0 12px;
+        color: #c0c0c0;
+        transition: color 0.2s ease;
+      }
+
       #wireplumber {
         padding: 0 12px;
-        color: #888888;
+        color: #c0c0c0;
+        transition: color 0.2s ease;
+      }
+
+      #battery {
+        padding: 0 12px;
+        color: #c0c0c0;
         transition: color 0.2s ease;
       }
 
       #battery.charging {
-        color: #b0b0b0;
-      }
-
-      #battery.warning:not(.charging) {
         color: #d0d0d0;
       }
 
+      #battery.warning:not(.charging) {
+        color: #d4a87a;
+      }
+
       #battery.critical:not(.charging) {
-        color: #f0f0f0;
+        color: #d48a8a;
       }
 
       #network.disconnected {
-        color: #404040;
+        color: #707070;
       }
 
       #wireplumber.muted {
-        color: #404040;
+        color: #707070;
       }
     '';
   };

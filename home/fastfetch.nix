@@ -7,7 +7,7 @@
       source = "nixos";
       color = {
         "1" = "white";
-        "2" = "gray";
+        "2" = "8";
       };
     };
     display = {

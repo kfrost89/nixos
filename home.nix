@@ -23,12 +23,19 @@
 
     gtk = {
       enable = true;
+      font = {
+        name = "Inter";
+        size = 11;
+      };
       theme.name = "adw-gtk3-dark";
       theme.package = pkgs.adw-gtk3;
       iconTheme.name = "Papirus-Dark";
       iconTheme.package = pkgs.papirus-icon-theme;
       cursorTheme.name = "Adwaita";
       cursorTheme.size = 24;
+      gtk3.bookmarks = [
+        "file:///mnt/storage Storage"
+      ];
     };
 
     xdg.userDirs = {
