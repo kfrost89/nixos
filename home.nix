@@ -99,7 +99,10 @@
       ./home/waybar.nix
       ./home/mako.nix
       ./home/starship.nix
+      ./home/fastfetch.nix
       ./home/espanso.nix
+      ./home/neovim.nix
+      ./home/zed.nix
       ./home/swaylock.nix
       ./home/swayidle.nix
       ./home/fuzzel.nix

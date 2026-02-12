@@ -69,6 +69,7 @@
       }
     }
 
+    spawn-at-startup "foot" "--server"
     spawn-at-startup "waybar"
     spawn-at-startup "udiskie" "--automount"
     spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
@@ -97,8 +98,8 @@
 
     binds {
       // Apps
-      Mod+T { spawn "foot"; }
-      Mod+Return { spawn "foot"; }
+      Mod+T { spawn "footclient"; }
+      Mod+Return { spawn "footclient"; }
       Mod+B { spawn "firefox"; }
       Mod+E { spawn "nautilus"; }
       Mod+D { spawn "fuzzel"; }

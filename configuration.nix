@@ -83,7 +83,12 @@
     mako
     wl-clipboard
 
+    # screen sharing / presentations
+    wl-mirror         # mirror output to window
+    wdisplays         # GUI display config
+
     # utilities
+    fastfetch
     eza
     bat
     fd
@@ -111,19 +116,26 @@
 
     # dev
     nodejs
+    nodePackages.prettier
+    lazygit
 
     # text expander
     espanso-wayland
+
+    # bluetooth
+    bluetui
 
     # tools
     unstable.claude-code
     restic
     solaar
+    tailscale
   ];
 
   fonts.packages = [
     pkgs.hack-font
     pkgs.nerd-fonts.hack
+    pkgs.inter
   ];
   environment.variables.XCURSOR_THEME = "Adwaita";
   environment.variables.XCURSOR_SIZE = "24";
@@ -154,7 +166,22 @@
     };
   };
 
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   hardware.logitech.wireless.enable = true;
+
+  # Tailscale
+  services.tailscale.enable = true;
+
+  # Garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+  nix.settings.auto-optimise-store = true;
 
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "25.11";
