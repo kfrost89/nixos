@@ -112,6 +112,9 @@
     # dev
     nodejs
 
+    # text expander
+    espanso-wayland
+
     # tools
     unstable.claude-code
     restic

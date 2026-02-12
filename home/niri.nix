@@ -72,6 +72,7 @@
     spawn-at-startup "waybar"
     spawn-at-startup "udiskie" "--automount"
     spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+    spawn-at-startup "espanso" "daemon"
 
     hotkey-overlay {
       skip-at-startup
