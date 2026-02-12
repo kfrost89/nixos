@@ -69,6 +69,10 @@
       }
     }
 
+    output "DP-2" {
+      mode "2560x1440@240.001"
+    }
+
     spawn-at-startup "foot" "--server"
     spawn-at-startup "waybar"
     spawn-at-startup "udiskie" "--automount"
