@@ -18,4 +18,11 @@
   };
 
   programs.gamemode.enable = true;
+
+  # Storage drive (nvme1n1)
+  fileSystems."/mnt/storage" = {
+    device = "/dev/disk/by-label/storage";
+    fsType = "btrfs";
+    options = [ "compress=zstd" "noatime" ];
+  };
 }
