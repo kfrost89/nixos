@@ -137,6 +137,9 @@
     pkgs.hack-font
     pkgs.nerd-fonts.hack
     pkgs.inter
+    pkgs.noto-fonts
+    pkgs.noto-fonts-cjk-sans
+    pkgs.noto-fonts-color-emoji
   ];
 
   fonts.fontconfig = {
@@ -144,13 +147,17 @@
     antialias = true;
     hinting = {
       enable = true;
-      style = "full";
+      style = "slight";
     };
-    subpixel.rgba = "rgb";
+    subpixel = {
+      rgba = "rgb";
+      lcdfilter = "default";
+    };
     defaultFonts = {
-      sansSerif = [ "Inter" ];
-      monospace = [ "Hack Nerd Font" "Hack" ];
-      serif = [ "Inter" ];
+      sansSerif = [ "Inter" "Noto Sans" ];
+      monospace = [ "Hack Nerd Font" "Hack" "Noto Sans Mono" ];
+      serif = [ "Noto Serif" ];
+      emoji = [ "Noto Color Emoji" ];
     };
   };
   environment.variables.XCURSOR_THEME = "Adwaita";
@@ -159,6 +166,7 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";
+    FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
   };
 
