@@ -29,6 +29,15 @@
     }];
   };
 
+  # uinput + capabilities (needed for espanso-wayland)
+  hardware.uinput.enable = true;
+  security.wrappers.espanso = {
+    source = "${pkgs.espanso-wayland}/bin/espanso";
+    capabilities = "cap_dac_override+p";
+    owner = "root";
+    group = "root";
+  };
+
   # Storage drive (nvme1n1)
   fileSystems."/mnt/storage" = {
     device = "/dev/disk/by-label/storage";

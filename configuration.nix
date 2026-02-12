@@ -105,6 +105,7 @@
     zathura         # PDF viewer
     imv             # image viewer
     mpv             # media player
+    spotify
 
     # wayland / niri
     polkit_gnome    # authentication popups
@@ -179,15 +180,6 @@
       TIMELINE_LIMIT_WEEKLY = "4";
       TIMELINE_LIMIT_MONTHLY = "6";
     };
-  };
-
-  # uinput + capabilities (needed for espanso-wayland)
-  hardware.uinput.enable = true;
-  security.wrappers.espanso = {
-    source = "${pkgs.espanso-wayland}/bin/espanso";
-    capabilities = "cap_dac_override+p";
-    owner = "root";
-    group = "root";
   };
 
   # Bluetooth
