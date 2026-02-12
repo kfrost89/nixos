@@ -18,13 +18,13 @@
       max-visible = 3;
       layer = "overlay";
 
-      "[urgency=low]" = {
+      "urgency=low" = {
         border-color = "#2a2a2a";
         text-color = "#888888";
         default-timeout = 3000;
       };
 
-      "[urgency=critical]" = {
+      "urgency=critical" = {
         border-color = "#e0e0e0";
         text-color = "#ffffff";
         default-timeout = 0;

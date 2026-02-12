@@ -3,14 +3,14 @@
     enable = true;
     settings = {
       main = {
-        font = "Hack:size=12";
+        font = "Hack:size=16";
         prompt = "'> '";
         layer = "overlay";
-        lines = 8;
-        width = 35;
-        horizontal-pad = 16;
-        vertical-pad = 12;
-        inner-pad = 8;
+        lines = 12;
+        width = 50;
+        horizontal-pad = 24;
+        vertical-pad = 20;
+        inner-pad = 12;
       };
       colors = {
         background = "000000d9";

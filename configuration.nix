@@ -81,6 +81,7 @@
     fuzzel
     mako
     wl-clipboard
+    libnotify
 
     # screen sharing / presentations
     wl-mirror         # mirror output to window
@@ -109,6 +110,7 @@
     spotify
 
     # wayland / niri
+    xwayland-satellite # XWayland for niri
     polkit_gnome    # authentication popups
     swaylock        # lock screen
     swayidle        # idle management
