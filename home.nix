@@ -113,6 +113,7 @@
       ./home/swaylock.nix
       ./home/swayidle.nix
       ./home/fuzzel.nix
+      ./home/firefox.nix
     ];
   };
 }

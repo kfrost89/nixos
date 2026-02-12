@@ -108,6 +108,8 @@
       Mod+B { spawn "firefox"; }
       Mod+E { spawn "nautilus"; }
       Mod+D { spawn "fuzzel"; }
+      Mod+S { spawn "signal-desktop"; }
+      Mod+N { spawn "obsidian"; }
 
       // Session
       Mod+Shift+E { quit; }

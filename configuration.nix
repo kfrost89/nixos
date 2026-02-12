@@ -69,7 +69,6 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    firefox
     chromium
     obsidian
     signal-desktop
@@ -95,6 +94,8 @@
     ripgrep
     fzf
     unzip
+    hunspellDicts.da_DK
+    hunspellDicts.en_US
 
     # file management
     nautilus
@@ -167,6 +168,7 @@
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";
     FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
+    DICPATH = "${pkgs.hunspellDicts.da_DK}/share/hunspell:${pkgs.hunspellDicts.en_US}/share/hunspell";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
   };
 
