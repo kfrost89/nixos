@@ -117,6 +117,7 @@
       Mod+Shift+P { power-off-monitors; }
       Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
       Super+Alt+L { spawn "swaylock" "-f"; }
+      Mod+Delete { spawn "power-menu"; }
       Mod+Shift+Slash { show-hotkey-overlay; }
 
       // Windows

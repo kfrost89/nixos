@@ -13,17 +13,17 @@
         inner-pad = 8;
       };
       colors = {
-        background = "0e0e0eee";
+        background = "000000d9";
         text = "e0e0e0ff";
         match = "ffffffff";
         selection = "2a2a2aff";
         selection-text = "ffffffff";
         selection-match = "ffffffff";
-        border = "404040ff";
+        border = "00000000";
       };
       border = {
-        width = 2;
-        radius = 12;
+        width = 0;
+        radius = 14;
       };
     };
   };
