@@ -3,6 +3,8 @@
 {
   networking.hostName = "desktop";
 
+  boot.kernelParams = [ "nvidia-drm.fbdev=1" ];
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
