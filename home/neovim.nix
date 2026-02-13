@@ -126,7 +126,6 @@
       require('render-markdown').setup{}
       require('nvim-autopairs').setup{}
       require('which-key').setup{}
-      require('lazygit').setup{}
 
       -- lazygit
       vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { silent = true })

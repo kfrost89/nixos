@@ -22,12 +22,14 @@
 
   programs.gamemode.enable = true;
 
-  # ALC 897: force analog profile so volume keys work
-  services.pipewire.wireplumber.extraConfig."10-alc897-analog" = {
+  # Default audio to NVIDIA HDMI (monitor speakers)
+  services.pipewire.wireplumber.extraConfig."10-default-hdmi" = {
     "monitor.alsa.rules" = [{
-      matches = [{ "device.name" = "alsa_card.pci-0000_00_1f.3"; }];
+      matches = [{ "node.name" = "~alsa_output.pci-0000_01_00.1.*"; }];
       actions.update-props = {
-        "device.profile" = "output:analog-stereo+input:analog-stereo";
+        "node.description" = "Monitor HDMI";
+        "priority.session" = 2000;
+        "priority.driver" = 2000;
       };
     }];
   };
