@@ -38,6 +38,7 @@
     group = "root";
   };
 
+
   # Storage drive (nvme1n1)
   fileSystems."/mnt/storage" = {
     device = "/dev/disk/by-label/storage";

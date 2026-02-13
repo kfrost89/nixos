@@ -16,6 +16,7 @@
       default-timeout = 5000;
       group-by = "app-name";
       max-visible = 3;
+      anchor = "top-center";
       layer = "overlay";
 
       "urgency=low" = {
