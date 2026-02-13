@@ -89,7 +89,7 @@
         "inode/directory" = "org.gnome.Nautilus.desktop";
 
         # Text
-        "text/plain" = "dev.zed.Zed.desktop";
+        "text/plain" = "neovim.desktop";
       };
     };
 
@@ -109,7 +109,7 @@
       ./home/fastfetch.nix
       ./home/espanso.nix
       ./home/neovim.nix
-      ./home/zed.nix
+
       ./home/swaylock.nix
       ./home/swayidle.nix
       ./home/fuzzel.nix

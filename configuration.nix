@@ -72,7 +72,6 @@
     chromium
     obsidian
     signal-desktop
-    zed-editor
     git
     neovim
     btop
