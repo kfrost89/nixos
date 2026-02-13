@@ -20,7 +20,7 @@
       vim.g.mapleader = " "
 
       vim.opt.number = true
-      vim.opt.relativenumber = true
+      vim.opt.relativenumber = false
       vim.opt.tabstop = 2
       vim.opt.shiftwidth = 2
       vim.opt.expandtab = true
@@ -44,8 +44,8 @@
       vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
       vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-      -- lazygit
-      vim.keymap.set("n", "<leader>gg", ":!foot lazygit<CR>", { silent = true })
+      -- colorscheme
+      vim.cmd.colorscheme("tokyonight-night")
 
       -- keep cursor centered
       vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -96,27 +96,58 @@
       cmp_luasnip
 
       # ui
+      tokyonight-nvim
       lualine-nvim
       indent-blankline-nvim
+      which-key-nvim
 
       # markdown
       render-markdown-nvim
 
       # git
       gitsigns-nvim
+      lazygit-nvim
 
-      # comment
+      # editing
       comment-nvim
+      nvim-autopairs
+
+      # formatting
+      conform-nvim
     ];
 
     extraConfig = ''
       lua << EOF
       require('telescope').setup{}
-      require('lualine').setup{ options = { theme = 'auto' } }
+      require('lualine').setup{ options = { theme = 'tokyonight' } }
       require('gitsigns').setup{}
       require('Comment').setup{}
       require('ibl').setup{}
       require('render-markdown').setup{}
+      require('nvim-autopairs').setup{}
+      require('which-key').setup{}
+      require('lazygit').setup{}
+
+      -- lazygit
+      vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { silent = true })
+
+      -- format on save
+      require('conform').setup({
+        formatters_by_ft = {
+          javascript = { 'prettier' },
+          typescript = { 'prettier' },
+          html = { 'prettier' },
+          css = { 'prettier' },
+          json = { 'prettier' },
+          yaml = { 'prettier' },
+          markdown = { 'prettier' },
+          astro = { 'prettier' },
+        },
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_format = 'fallback',
+        },
+      })
 
       -- telescope keymaps
       local builtin = require('telescope.builtin')
