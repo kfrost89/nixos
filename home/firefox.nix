@@ -10,8 +10,8 @@
         "font.name.serif.x-western" = "Noto Serif";
         "font.name.sans-serif.x-western" = "Inter";
         "font.name.monospace.x-western" = "Hack";
-        "font.size.variable.x-western" = 18;
-        "font.size.monospace.x-western" = 15;
+        "font.size.variable.x-western" = 17;
+        "font.size.monospace.x-western" = 14;
         "font.default.x-western" = "sans-serif";
 
         # Better rendering

@@ -31,13 +31,14 @@
         format = "{:%H:%M}";
         format-alt = "w{:%V · %d %b}";
         tooltip-format = "{:%A %d %B %Y · Week %V}";
+        on-click-right = "foot cal";
       };
 
       idle_inhibitor = {
         format = "{icon}";
         format-icons = {
-          activated = "○";
-          deactivated = "●";
+          activated = "●";
+          deactivated = "○";
         };
         tooltip-format-activated = "Idle inhibitor active";
         tooltip-format-deactivated = "Idle inhibitor inactive";
@@ -68,12 +69,16 @@
         format-disconnected = "offline";
         tooltip-format-wifi = "{signalStrength}%";
         on-click = "foot impala";
+        on-click-right = "rfkill toggle wifi";
       };
 
       wireplumber = {
         format = "{volume}%";
         format-muted = "mute";
         on-click = "pavucontrol";
+        on-click-middle = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0";
+        on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-";
       };
 
       privacy = {
