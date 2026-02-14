@@ -35,7 +35,8 @@
       };
 
       "custom/dnd" = {
-        exec = ''makoctl mode | grep -q do-not-disturb && echo '{"text":"dnd","class":"active"}' || echo '{"text":"","class":"inactive"}''';
+        exec = "makoctl mode | grep -q do-not-disturb && echo '{\"text\":\"dnd\",\"class\":\"active\"}' || echo '{\"text\":\"\",\"class\":\"inactive\"}'";
+
         return-type = "json";
         interval = 2;
         on-click = "makoctl mode -t do-not-disturb";

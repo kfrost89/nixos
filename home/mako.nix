@@ -30,6 +30,10 @@
         text-color = "#ffffff";
         default-timeout = 0;
       };
+
+      "mode=do-not-disturb" = {
+        invisible = 1;
+      };
     };
   };
 }
