@@ -7,9 +7,9 @@
       layer = "top";
       position = "top";
       height = 40;
-      margin-top = 8;
-      margin-left = 200;
-      margin-right = 200;
+      margin-top = 0;
+      margin-left = 0;
+      margin-right = 0;
       spacing = 0;
       reload_style_on_change = true;
 
@@ -36,8 +36,8 @@
       idle_inhibitor = {
         format = "{icon}";
         format-icons = {
-          activated = "☕";
-          deactivated = "☕";
+          activated = "●";
+          deactivated = "○";
         };
         tooltip-format-activated = "Idle inhibitor active";
         tooltip-format-deactivated = "Idle inhibitor inactive";
@@ -66,6 +66,7 @@
         format-wifi = "{essid}";
         format-ethernet = "eth";
         format-disconnected = "offline";
+        tooltip-format-wifi = "{signalStrength}%";
         on-click = "foot impala";
       };
 
@@ -98,6 +99,7 @@
       battery = {
         format = "bat {capacity}%";
         format-charging = "bat +{capacity}%";
+        interval = 60;
         states = {
           warning = 20;
           critical = 10;
