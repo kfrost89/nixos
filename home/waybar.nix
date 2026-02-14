@@ -86,9 +86,9 @@
         icon-spacing = 6;
         transition-duration = 250;
         modules = [
-          { type = "screenshare"; tooltip = true; tooltip-icon-size = 20; icon-name = "󰍹"; }
-          { type = "audio-in"; tooltip = true; tooltip-icon-size = 20; icon-name = "󰍬"; }
-          { type = "audio-out"; tooltip = true; tooltip-icon-size = 20; icon-name = "󰕾"; }
+          { type = "screenshare"; tooltip = true; tooltip-icon-size = 20; }
+          { type = "audio-in"; tooltip = true; tooltip-icon-size = 20; }
+          { type = "audio-out"; tooltip = true; tooltip-icon-size = 20; }
         ];
       };
 

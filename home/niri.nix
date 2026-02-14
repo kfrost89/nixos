@@ -16,7 +16,7 @@
       }
 
       mouse {
-        accel-speed 0.0
+        accel-speed 0.3
       }
 
       trackpoint {
@@ -87,7 +87,7 @@
     screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
     window-rule {
-      geometry-corner-radius 10 10 10 10
+      geometry-corner-radius 8 8 8 8
       clip-to-geometry true
     }
 
