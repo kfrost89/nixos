@@ -11,6 +11,11 @@
     nix-direnv.enable = true;
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   programs.fish = {
     enable = true;
     shellAliases = {

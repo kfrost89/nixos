@@ -111,6 +111,9 @@
       Mod+S { spawn "signal-desktop"; }
       Mod+N { spawn "obsidian"; }
 
+      // Do not disturb
+      Mod+Shift+D { spawn "sh" "-c" "makoctl mode -t do-not-disturb"; }
+
       // Session
       Mod+Shift+E { quit; }
       Ctrl+Alt+Delete { quit; }

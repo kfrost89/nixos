@@ -15,7 +15,7 @@
 
       modules-left = [ "niri/workspaces" "mpris" ];
       modules-center = [ "clock" ];
-      modules-right = [ "privacy" "idle_inhibitor" "cpu" "memory" "disk" "network" "bluetooth" "wireplumber" "battery" "tray" ];
+      modules-right = [ "privacy" "custom/dnd" "idle_inhibitor" "cpu" "memory" "disk" "network" "bluetooth" "wireplumber" "battery" "tray" ];
 
       "niri/workspaces" = {};
 
@@ -32,6 +32,14 @@
         format-alt = "w{:%V · %d %b}";
         tooltip-format = "{:%A %d %B %Y · Week %V}";
         on-click-right = "foot cal";
+      };
+
+      "custom/dnd" = {
+        exec = ''makoctl mode | grep -q do-not-disturb && echo '{"text":"dnd","class":"active"}' || echo '{"text":"","class":"inactive"}''';
+        return-type = "json";
+        interval = 2;
+        on-click = "makoctl mode -t do-not-disturb";
+        tooltip = false;
       };
 
       idle_inhibitor = {
@@ -177,6 +185,11 @@
         padding: 0 16px;
         color: #e0e0e0;
         letter-spacing: 0.5px;
+      }
+
+      #custom-dnd {
+        padding: 0 10px;
+        color: #e0e0e0;
       }
 
       #idle_inhibitor {

@@ -1,8 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.firefox = {
     enable = true;
+    languagePacks = [ "da" "en-US" ];
     profiles.default = {
       isDefault = true;
       settings = {
@@ -47,6 +48,18 @@
         "signon.rememberSignons" = false;
         "extensions.formautofill.addresses.enabled" = false;
         "extensions.formautofill.creditCards.enabled" = false;
+
+        # Wayland native file picker
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
+
+        # Hardware video decoding
+        "media.ffmpeg.vaapi.enabled" = true;
+
+        # Disable middle-click paste
+        "middlemouse.paste" = false;
+
+        # New tabs open next to current
+        "browser.tabs.insertAfterCurrent" = true;
 
         # Smooth scrolling
         "general.smoothScroll" = true;
