@@ -37,14 +37,22 @@
       -- keymaps
       vim.keymap.set("n", "<leader>w", ":w<CR>")
       vim.keymap.set("n", "<leader>q", ":q<CR>")
-      vim.keymap.set("n", "<leader>e", ":Ex<CR>")
+      vim.keymap.set("n", "<leader>e", ":Oil<CR>")
       vim.keymap.set("n", "<Esc>", ":noh<CR>")
 
       -- move lines
       vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
       vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-      -- colorscheme
+      -- colorscheme (bg matched to foot)
+      require('tokyonight').setup({
+        on_colors = function(colors)
+          colors.bg = '#1e1e1e'
+          colors.bg_dark = '#1a1a1a'
+          colors.bg_sidebar = '#1a1a1a'
+          colors.bg_float = '#1a1a1a'
+        end,
+      })
       vim.cmd.colorscheme("tokyonight-night")
 
       -- keep cursor centered
@@ -108,6 +116,10 @@
       gitsigns-nvim
       lazygit-nvim
 
+      # file explorer
+      oil-nvim
+      nvim-web-devicons
+
       # editing
       comment-nvim
       nvim-autopairs
@@ -125,6 +137,7 @@
       require('ibl').setup{}
       require('render-markdown').setup{}
       require('nvim-autopairs').setup{}
+      require('oil').setup()
       require('which-key').setup{}
 
       -- lazygit

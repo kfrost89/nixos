@@ -18,8 +18,8 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
-        user = "greeter";
+        command = "niri-session";
+        user = "frozt";
       };
     };
   };
@@ -87,6 +87,7 @@
     wdisplays         # GUI display config
 
     # utilities
+    usbutils
     fastfetch
     eza
     bat

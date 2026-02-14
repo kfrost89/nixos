@@ -109,7 +109,7 @@
       ./home/fastfetch.nix
       ./home/espanso.nix
       ./home/neovim.nix
-
+      ./home/git.nix
       ./home/swaylock.nix
       ./home/swayidle.nix
       ./home/fuzzel.nix
