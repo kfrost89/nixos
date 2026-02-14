@@ -7,9 +7,9 @@
       layer = "top";
       position = "top";
       height = 40;
-      margin-top = 0;
-      margin-left = 0;
-      margin-right = 0;
+      margin-top = 16;
+      margin-left = 16;
+      margin-right = 16;
       spacing = 0;
       reload_style_on_change = true;
 
@@ -36,8 +36,8 @@
       idle_inhibitor = {
         format = "{icon}";
         format-icons = {
-          activated = "●";
-          deactivated = "○";
+          activated = "○";
+          deactivated = "●";
         };
         tooltip-format-activated = "Idle inhibitor active";
         tooltip-format-deactivated = "Idle inhibitor inactive";
