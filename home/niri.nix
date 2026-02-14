@@ -36,7 +36,7 @@
     prefer-no-csd
 
     layout {
-      background-color "#707070"
+      background-color "#909090"
       gaps 16
       center-focused-column "never"
 

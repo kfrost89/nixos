@@ -15,7 +15,7 @@
 
       modules-left = [ "niri/workspaces" "mpris" ];
       modules-center = [ "clock" ];
-      modules-right = [ "idle_inhibitor" "cpu" "memory" "disk" "network" "wireplumber" "battery" ];
+      modules-right = [ "privacy" "idle_inhibitor" "cpu" "memory" "disk" "network" "bluetooth" "wireplumber" "battery" "tray" ];
 
       "niri/workspaces" = {};
 
@@ -36,8 +36,8 @@
       idle_inhibitor = {
         format = "{icon}";
         format-icons = {
-          activated = "idle off";
-          deactivated = "idle on";
+          activated = "☕";
+          deactivated = "☕";
         };
         tooltip-format-activated = "Idle inhibitor active";
         tooltip-format-deactivated = "Idle inhibitor inactive";
@@ -75,6 +75,26 @@
         on-click = "pavucontrol";
       };
 
+      privacy = {
+        icon-size = 14;
+        icon-spacing = 6;
+        transition-duration = 250;
+        modules = [
+          { type = "screenshare"; tooltip = true; tooltip-icon-size = 20; }
+          { type = "audio-in"; tooltip = true; tooltip-icon-size = 20; }
+          { type = "audio-out"; tooltip = true; tooltip-icon-size = 20; }
+        ];
+      };
+
+      bluetooth = {
+        format = "bt";
+        format-connected = "bt {num_connections}";
+        format-disabled = "";
+        tooltip-format-connected = "{device_enumerate}";
+        tooltip-format-enumerate-connected = "{device_alias}";
+        on-click = "foot bluetui";
+      };
+
       battery = {
         format = "bat {capacity}%";
         format-charging = "bat +{capacity}%";
@@ -82,6 +102,11 @@
           warning = 20;
           critical = 10;
         };
+      };
+
+      tray = {
+        icon-size = 14;
+        spacing = 8;
       };
     }];
 
@@ -216,6 +241,48 @@
 
       #wireplumber.muted {
         color: #707070;
+      }
+
+      #bluetooth {
+        padding: 0 12px;
+        color: #c0c0c0;
+        transition: color 0.2s ease;
+      }
+
+      #bluetooth.connected {
+        color: #e0e0e0;
+      }
+
+      #bluetooth.disabled {
+        color: #707070;
+      }
+
+      #tray {
+        padding: 0 8px;
+      }
+
+      #tray > .passive {
+        -gtk-icon-effect: dim;
+      }
+
+      #privacy {
+        padding: 0 10px;
+      }
+
+      #privacy-item {
+        padding: 0 4px;
+      }
+
+      #privacy-item.screenshare {
+        color: #32d74b;
+      }
+
+      #privacy-item.audio-in {
+        color: #ff9f0a;
+      }
+
+      #privacy-item.audio-out {
+        color: #ff9f0a;
       }
     '';
   };
