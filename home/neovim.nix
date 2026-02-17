@@ -50,16 +50,19 @@
       vim.keymap.set("n", "<C-d>", "<C-d>zz")
       vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-      -- register mdx as a filetype
+      -- register mdx as a filetype and use markdown parser
       vim.filetype.add({ extension = { mdx = 'mdx' } })
+      vim.treesitter.language.register('markdown', 'mdx')
 
-      -- soft wrap for markdown
+      -- prose mode for markdown
       vim.api.nvim_create_autocmd("FileType", {
         pattern = { "markdown", "mdx" },
         callback = function()
           vim.opt_local.wrap = true
           vim.opt_local.linebreak = true
           vim.opt_local.conceallevel = 2
+          vim.opt_local.textwidth = 80
+          vim.opt_local.formatoptions:append('t')
         end,
       })
     '';
@@ -150,6 +153,7 @@
           json = { 'prettier' },
           yaml = { 'prettier' },
           markdown = { 'prettier' },
+          mdx = { 'prettier' },
           astro = { 'prettier' },
         },
         format_on_save = {
