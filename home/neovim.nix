@@ -44,20 +44,14 @@
       vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
       vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-      -- colorscheme (bg matched to foot)
-      require('tokyonight').setup({
-        on_colors = function(colors)
-          colors.bg = '#1e1e1e'
-          colors.bg_dark = '#1a1a1a'
-          colors.bg_sidebar = '#1a1a1a'
-          colors.bg_float = '#1a1a1a'
-        end,
-      })
-      vim.cmd.colorscheme("tokyonight-night")
+      vim.cmd.colorscheme("default")
 
       -- keep cursor centered
       vim.keymap.set("n", "<C-d>", "<C-d>zz")
       vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+      -- register mdx as a filetype
+      vim.filetype.add({ extension = { mdx = 'mdx' } })
 
       -- soft wrap for markdown
       vim.api.nvim_create_autocmd("FileType", {
@@ -104,7 +98,6 @@
       cmp_luasnip
 
       # ui
-      tokyonight-nvim
       lualine-nvim
       indent-blankline-nvim
       which-key-nvim
@@ -131,11 +124,13 @@
     extraConfig = ''
       lua << EOF
       require('telescope').setup{}
-      require('lualine').setup{ options = { theme = 'tokyonight' } }
+      require('lualine').setup{}
       require('gitsigns').setup{}
       require('Comment').setup{}
       require('ibl').setup{}
-      require('render-markdown').setup{}
+      require('render-markdown').setup{
+        file_types = { 'markdown', 'mdx' },
+      }
       require('nvim-autopairs').setup{}
       require('oil').setup()
       require('which-key').setup{}
