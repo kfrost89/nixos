@@ -115,6 +115,7 @@
       ./home/fuzzel.nix
       ./home/firefox.nix
       ./home/scripts.nix
+      ./home/theme.nix
     ];
   };
 }

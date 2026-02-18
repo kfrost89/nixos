@@ -15,7 +15,7 @@
 
       modules-left = [ "niri/workspaces" "mpris" ];
       modules-center = [ "clock" ];
-      modules-right = [ "privacy" "custom/dnd" "idle_inhibitor" "cpu" "memory" "disk" "network" "bluetooth" "wireplumber" "battery" "tray" ];
+      modules-right = [ "privacy" "custom/dnd" "custom/theme" "idle_inhibitor" "cpu" "memory" "disk" "network" "bluetooth" "wireplumber" "battery" "tray" ];
 
       "niri/workspaces" = {};
 
@@ -40,6 +40,14 @@
         return-type = "json";
         interval = 2;
         on-click = "makoctl mode -t do-not-disturb";
+        tooltip = false;
+      };
+
+      "custom/theme" = {
+        exec = "theme-toggle query";
+        interval = "once";
+        signal = 8;
+        on-click = "theme-toggle";
         tooltip = false;
       };
 
@@ -189,6 +197,11 @@
       }
 
       #custom-dnd {
+        padding: 0 10px;
+        color: #e0e0e0;
+      }
+
+      #custom-theme {
         padding: 0 10px;
         color: #e0e0e0;
       }

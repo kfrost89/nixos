@@ -114,6 +114,9 @@
       // Do not disturb
       Mod+Shift+D { spawn "sh" "-c" "makoctl mode -t do-not-disturb"; }
 
+      // Theme toggle
+      Mod+Shift+T { spawn "theme-toggle"; }
+
       // Session
       Mod+Shift+E { quit; }
       Ctrl+Alt+Delete { quit; }
