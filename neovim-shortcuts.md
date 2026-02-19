@@ -10,7 +10,7 @@ Press `Space` and wait to see all available keybinds (which-key).
 |---|---|
 | `Space w` | Save file |
 | `Space q` | Quit |
-| `Space e` | Open file explorer (netrw) |
+| `Space e` | Open file explorer (Oil) |
 | `Esc` | Clear search highlight |
 
 ## Navigation
@@ -59,10 +59,21 @@ Press `Space` and wait to see all available keybinds (which-key).
 
 ## Formatting
 
-Files are formatted automatically on save with prettier (js, ts, html, css, json, yaml, markdown, astro).
+| Key | Action |
+|---|---|
+| `Space cf` | Format file manually |
+| *(auto)* | Format on save (prettier) |
 
 ## Git
 
 | Key | Action |
 |---|---|
-| `Space gg` | Open lazygit (floating inside neovim) |
+| `Space gg` | Open LazyGit |
+
+## Oil (file explorer)
+
+| Key | Action |
+|---|---|
+| `q` | Close Oil |
+| `Enter` | Open file/directory |
+| `-` | Go up a directory |
