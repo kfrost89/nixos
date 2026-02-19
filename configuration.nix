@@ -211,6 +211,9 @@
   };
   nix.settings.auto-optimise-store = true;
 
+  # Swap (zram) — prevents hard freezes under memory pressure
+  zramSwap.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "25.11";
 }

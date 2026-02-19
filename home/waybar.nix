@@ -15,7 +15,7 @@
 
       modules-left = [ "niri/workspaces" "mpris" ];
       modules-center = [ "clock" ];
-      modules-right = [ "privacy" "custom/dnd" "custom/theme" "idle_inhibitor" "cpu" "memory" "disk" "network" "bluetooth" "wireplumber" "battery" "tray" ];
+      modules-right = [ "privacy" "custom/theme" "idle_inhibitor" "custom/dnd" "cpu" "memory" "disk" "network" "bluetooth" "wireplumber" "battery" "tray" ];
 
       "niri/workspaces" = {};
 
@@ -45,7 +45,7 @@
 
       "custom/theme" = {
         exec = "theme-toggle query";
-        interval = "once";
+        interval = 2;
         signal = 8;
         on-click = "theme-toggle";
         tooltip = false;
@@ -54,8 +54,8 @@
       idle_inhibitor = {
         format = "{icon}";
         format-icons = {
-          activated = "●";
-          deactivated = "○";
+          activated = "awake";
+          deactivated = "sleep";
         };
         tooltip-format-activated = "Idle inhibitor active";
         tooltip-format-deactivated = "Idle inhibitor inactive";

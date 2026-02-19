@@ -1,41 +1,51 @@
 { pkgs, ... }:
 
 let
-  theme-toggle = pkgs.writeShellScriptBin "theme-toggle" ''
-    current=$(gsettings get org.gnome.desktop.interface color-scheme)
+  schema = pkgs.gsettings-desktop-schemas;
+  schemaDir = "${schema}/share/gsettings-schemas/${schema.name}";
 
-    set_dark() {
-      gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-      gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
-      gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-    }
+  theme-toggle = pkgs.writeShellApplication {
+    name = "theme-toggle";
+    runtimeInputs = [ pkgs.glib ];
+    text = ''
+      export XDG_DATA_DIRS="${schemaDir}:''${XDG_DATA_DIRS:-}"
 
-    set_light() {
-      gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-      gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3'
-      gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
-    }
+      gs() { gsettings "$1" org.gnome.desktop.interface "''${@:2}"; }
+      current=$(gs get color-scheme)
 
-    case "''${1:-toggle}" in
-      dark)  set_dark ;;
-      light) set_light ;;
-      query)
-        if [ "$current" = "'prefer-dark'" ]; then
-          echo "dark"
-        else
-          echo "light"
-        fi
-        ;;
-      toggle|*)
-        if [ "$current" = "'prefer-dark'" ]; then
-          set_light
-        else
-          set_dark
-        fi
-        pkill -SIGRTMIN+8 waybar
-        ;;
-    esac
-  '';
+      set_dark() {
+        gs set color-scheme 'prefer-dark'
+        gs set gtk-theme 'adw-gtk3-dark'
+        gs set icon-theme 'Papirus-Dark'
+      }
+
+      set_light() {
+        gs set color-scheme 'prefer-light'
+        gs set gtk-theme 'adw-gtk3'
+        gs set icon-theme 'Papirus'
+      }
+
+      case "''${1:-toggle}" in
+        dark)  set_dark ;;
+        light) set_light ;;
+        query)
+          if [ "$current" = "'prefer-dark'" ]; then
+            echo "dark"
+          else
+            echo "light"
+          fi
+          ;;
+        toggle|*)
+          if [ "$current" = "'prefer-dark'" ]; then
+            set_light
+          else
+            set_dark
+          fi
+          pkill -SIGRTMIN+8 waybar
+          ;;
+      esac
+    '';
+  };
 in
 {
   home.packages = [ theme-toggle ];
