@@ -208,11 +208,11 @@
 
       #idle_inhibitor {
         padding: 0 10px;
-        color: #909090;
+        color: #707070;
       }
 
       #idle_inhibitor.activated {
-        color: #e0e0e0;
+        color: #d4a87a;
       }
 
       #cpu {
