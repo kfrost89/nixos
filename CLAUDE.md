@@ -6,6 +6,7 @@
 - Config files go in `home/` as separate `.nix` modules, imported in `home.nix`
 - Use `xdg.configFile` for apps without a Home Manager module (e.g. niri, espanso)
 - Use `programs.*` or `services.*` when Home Manager has native support (e.g. foot, fish, starship)
+- **Try before install**: Use `nix shell nixpkgs#<package>` to test apps temporarily instead of adding them to configuration.nix
 
 ## Overview
 
@@ -29,6 +30,7 @@ nixos-config/
 │   ├── mako.nix              # Notification daemon
 │   ├── fuzzel.nix            # App launcher
 │   ├── espanso.nix           # Text expander (Wayland)
+│   ├── neovim.nix            # Neovim (LSP, treesitter, telescope, oil, conform)
 │   ├── swaylock.nix          # Lock screen
 │   ├── swayidle.nix          # Idle management (lock 5min, monitors off 10min)
 ├── hosts/
@@ -51,15 +53,51 @@ nixos-config/
 - fstrim for SSD
 
 ### desktop (NVIDIA)
-- NVIDIA proprietary driver (modesetting)
+- Motherboard: ASUS Z690-P
+- NVIDIA proprietary driver (modesetting, closed source)
+- HDMI audio routed to monitor speakers (priority via WirePlumber)
 - Steam with gamescope session
 - Gamemode enabled
+- Secondary storage: `/mnt/storage` (Btrfs, zstd compression)
+- Webcam: Logitech Brio (1080p via USB 2.0, 4K requires USB 3.0)
+- Espanso: runs with `cap_dac_override` capability wrapper (Wayland requirement)
 
 ## Aliases (fish)
 
 - `rebuild` — rebuild from local clone (auto-detects hostname)
 - `update` — update flake + rebuild + push
 - `rebuild-github` — rebuild from GitHub repo
+
+## Disk Layout (disko)
+
+- GPT partition table
+- 512M ESP (`/boot`)
+- LUKS-encrypted Btrfs with subvolumes: `@` (`/`), `@home`, `@nix`, `@log`, `@snapshots`
+- Compression: zstd, noatime on all subvolumes
+- Snapshots: snapper (hourly, 5h/7d/4w/6m retention)
+
+## Niri Keybinds (Mod = Super)
+
+| Key | Action |
+|---|---|
+| `Mod+T` / `Mod+Return` | Terminal |
+| `Mod+B` | Firefox |
+| `Mod+D` | Fuzzel (launcher) |
+| `Mod+E` | Nautilus |
+| `Mod+S` | Signal |
+| `Mod+N` | Obsidian |
+| `Mod+Q` | Close window |
+| `Mod+F` | Maximize column |
+| `Mod+Shift+F` | Fullscreen |
+| `Mod+V` | Toggle floating |
+| `Mod+O` | Overview |
+| `Mod+H/J/K/L` | Focus (vim-style) |
+| `Mod+Ctrl+H/J/K/L` | Move window |
+| `Mod+1-9` | Switch workspace |
+| `Mod+Ctrl+1-9` | Move to workspace |
+| `Mod+Scroll` | Scroll workspaces |
+| `Super+Alt+L` | Lock screen |
+| `Print` | Screenshot |
 
 ## Theme
 
@@ -70,6 +108,14 @@ nixos-config/
 - Font: Hack
 - GTK: adw-gtk3-dark, Papirus-Dark icons, Adwaita cursor 24px
 - No animations
+
+## Neovim
+
+- Leader: `Space`
+- LSP: astro, typescript, html, css, json, markdown (marksman), nix (nil)
+- Plugins: telescope, treesitter, nvim-cmp, oil, conform (prettier), lazygit, gitsigns, which-key, comment, autopairs, render-markdown
+- Format on save via prettier
+- Key shortcuts in `neovim-shortcuts.md`
 
 ## Flake Inputs
 - `nixpkgs`: NixOS 25.11 (stable)
