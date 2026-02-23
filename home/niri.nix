@@ -19,6 +19,8 @@
         accel-speed 0.0
       }
 
+      focus-follows-mouse max-scroll-amount="0%"
+
       trackpoint {
         accel-speed 0.0
       }
@@ -240,11 +242,13 @@
       Mod+Comma { consume-window-into-column; }
       Mod+Period { expel-window-from-column; }
 
-      // Sizing
+      // Sizing (keyboard)
       Mod+Minus { set-column-width "-10%"; }
       Mod+Equal { set-column-width "+10%"; }
       Mod+Shift+Minus { set-window-height "-10%"; }
       Mod+Shift+Equal { set-window-height "+10%"; }
+
+
 
       // Screenshots
       Print { screenshot; }

@@ -57,7 +57,7 @@
   users.users.frozt = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "input" "uinput" ];
+    extraGroups = [ "wheel" "input" "uinput" "video" ];
     initialPassword = "changeme";
   };
 
