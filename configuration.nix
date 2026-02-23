@@ -210,6 +210,7 @@
     options = "--delete-older-than 7d";
   };
   nix.settings.auto-optimise-store = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Swap (zram) — prevents hard freezes under memory pressure
   zramSwap.enable = true;
