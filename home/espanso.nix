@@ -33,5 +33,23 @@
             type: date
             params:
               format: "%H:%M"
+
+      - trigger: ":yes"
+        replace: "{{yesterday}}"
+        vars:
+          - name: yesterday
+            type: date
+            params:
+              format: "%m-%d-%Y"
+              offset: -86400
+
+      - trigger: ":tom"
+        replace: "{{tomorrow}}"
+        vars:
+          - name: tomorrow
+            type: date
+            params:
+              format: "%m-%d-%Y"
+              offset: 86400
   '';
 }
