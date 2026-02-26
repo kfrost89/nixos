@@ -9,7 +9,7 @@
       settings = {
         # Fonts — macOS style
         "font.name.serif.x-western" = "Noto Serif";
-        "font.name.sans-serif.x-western" = "Inter";
+        "font.name.sans-serif.x-western" = "IBM Plex Sans";
         "font.name.monospace.x-western" = "Hack";
         "font.size.variable.x-western" = 17;
         "font.size.monospace.x-western" = 14;

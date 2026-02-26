@@ -139,7 +139,7 @@
   fonts.packages = [
     pkgs.hack-font
     pkgs.nerd-fonts.hack
-    pkgs.inter
+    pkgs.ibm-plex
     pkgs.noto-fonts
     pkgs.noto-fonts-cjk-sans
     pkgs.noto-fonts-color-emoji
@@ -157,7 +157,7 @@
       lcdfilter = "default";
     };
     defaultFonts = {
-      sansSerif = [ "Inter" "Noto Sans" ];
+      sansSerif = [ "IBM Plex Sans" "Noto Sans" ];
       monospace = [ "Hack Nerd Font" "Hack" "Noto Sans Mono" ];
       serif = [ "Noto Serif" ];
       emoji = [ "Noto Color Emoji" ];
