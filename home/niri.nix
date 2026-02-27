@@ -19,8 +19,6 @@
         accel-speed 0.0
       }
 
-      focus-follows-mouse max-scroll-amount="0%"
-
       trackpoint {
         accel-speed 0.0
       }
@@ -91,6 +89,26 @@
     window-rule {
       geometry-corner-radius 8 8 8 8
       clip-to-geometry true
+    }
+
+    window-rule {
+      match app-id=r#"firefox$"#
+      default-column-width { proportion 0.66667; }
+    }
+
+    window-rule {
+      match app-id="Signal"
+      default-column-width { proportion 0.33333; }
+    }
+
+    window-rule {
+      match app-id="obsidian"
+      default-column-width { proportion 0.33333; }
+    }
+
+    window-rule {
+      match app-id="foot"
+      default-column-width { proportion 0.33333; }
     }
 
     window-rule {
