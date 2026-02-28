@@ -36,7 +36,7 @@
     prefer-no-csd
 
     layout {
-      background-color "#909090"
+      background-color "#414b50"
       gaps 16
       center-focused-column "never"
 
@@ -51,9 +51,9 @@
       }
 
       focus-ring {
-        width 2
-        active-color "#e0e0e0"
-        inactive-color "#404040"
+        width 3
+        active-color "#7fbbb3"
+        inactive-color "#2e383c"
       }
 
       border {
@@ -65,13 +65,19 @@
         softness 40
         spread 2
         offset x=0 y=4
-        color "#00000060"
+        color "#1e232680"
       }
     }
 
     output "DP-2" {
       mode "2560x1440@240.001"
     }
+
+    workspace "browser"
+    workspace "terminal"
+    workspace "notes"
+    workspace "code"
+    workspace "misc"
 
     spawn-at-startup "foot" "--server"
     spawn-at-startup "waybar"
@@ -94,21 +100,30 @@
     window-rule {
       match app-id=r#"firefox$"#
       default-column-width { proportion 0.66667; }
+      open-on-workspace "browser"
     }
 
     window-rule {
       match app-id="Signal"
       default-column-width { proportion 0.33333; }
+      open-on-workspace "misc"
     }
 
     window-rule {
       match app-id="obsidian"
       default-column-width { proportion 0.33333; }
+      open-on-workspace "notes"
     }
 
     window-rule {
       match app-id="foot"
       default-column-width { proportion 0.33333; }
+      open-on-workspace "terminal"
+    }
+
+    window-rule {
+      match app-id="Spotify"
+      open-on-workspace "misc"
     }
 
     window-rule {
@@ -267,6 +282,10 @@
       Mod+Shift+Equal { set-window-height "+10%"; }
 
 
+
+      // Resize (scroll)
+      Mod+Alt+WheelScrollUp { set-column-width "+5%"; }
+      Mod+Alt+WheelScrollDown { set-column-width "-5%"; }
 
       // Screenshots
       Print { screenshot; }

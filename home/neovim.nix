@@ -49,6 +49,9 @@
       luasnip
       cmp_luasnip
 
+      # theme
+      kanagawa-nvim
+
       # ui
       lualine-nvim
       which-key-nvim
@@ -91,7 +94,19 @@
       vim.opt.scrolloff = 8
       vim.opt.updatetime = 250
 
-      vim.cmd.colorscheme("default")
+      require('kanagawa').setup({
+        compile = false,
+        undercurl = true,
+        commentStyle = { italic = false },
+        functionStyle = {},
+        keywordStyle = { italic = false },
+        statementStyle = { bold = true },
+        typeStyle = {},
+        transparent = false,
+        dimInactive = false,
+        theme = 'wave',
+      })
+      vim.cmd.colorscheme('kanagawa')
 
       local map = vim.keymap.set
 
@@ -136,7 +151,7 @@
       map('n', '<leader>fb', require('telescope.builtin').buffers, { desc = "Buffers" })
 
       -- lualine
-      require('lualine').setup{}
+      require('lualine').setup{ options = { theme = 'kanagawa' } }
 
       -- gitsigns
       require('gitsigns').setup{}

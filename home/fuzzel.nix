@@ -3,22 +3,22 @@
     enable = true;
     settings = {
       main = {
-        font = "Hack:size=16";
-        prompt = "'> '";
+        font = "Hack:size=14";
+        prompt = "'  '";
         layer = "overlay";
-        lines = 12;
-        width = 50;
-        horizontal-pad = 24;
-        vertical-pad = 20;
-        inner-pad = 12;
+        lines = 10;
+        width = 45;
+        horizontal-pad = 20;
+        vertical-pad = 16;
+        inner-pad = 10;
       };
       colors = {
-        background = "000000d9";
-        text = "e0e0e0ff";
-        match = "ffffffff";
-        selection = "2a2a2aff";
-        selection-text = "ffffffff";
-        selection-match = "ffffffff";
+        background = "272e33ff";
+        text = "d3c6aaff";
+        match = "a7c080ff";
+        selection = "414b50ff";
+        selection-text = "d3c6aaff";
+        selection-match = "a7c080ff";
         border = "00000000";
       };
       border = {

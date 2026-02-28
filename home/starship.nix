@@ -5,24 +5,24 @@
       format = "$directory$git_branch$git_status$nix_shell$cmd_duration$line_break$character";
 
       character = {
-        success_symbol = "[∷](white)";
-        error_symbol = "[∷](dimmed red)";
+        success_symbol = "[∷](#a7c080)";
+        error_symbol = "[∷](#e67e80)";
       };
 
       directory = {
-        style = "bold white";
+        style = "bold #7fbbb3";
         truncation_length = 3;
         truncate_to_repo = true;
       };
 
       git_branch = {
-        style = "dimmed white";
+        style = "#9da9a0";
         format = "[$symbol$branch]($style) ";
         symbol = "";
       };
 
       git_status = {
-        style = "dimmed white";
+        style = "#9da9a0";
         format = "[$all_status$ahead_behind]($style) ";
         modified = "*";
         untracked = "?";
@@ -33,13 +33,13 @@
       };
 
       nix_shell = {
-        style = "dimmed white";
+        style = "#83c092";
         format = "[$symbol]($style) ";
         symbol = "nix";
       };
 
       cmd_duration = {
-        style = "dimmed white";
+        style = "#7a8478";
         format = "[$duration]($style) ";
         min_time = 2000;
       };

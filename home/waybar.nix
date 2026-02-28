@@ -146,17 +146,17 @@
       }
 
       window#waybar {
-        background: rgba(0, 0, 0, 0.85);
+        background: rgba(39, 46, 51, 0.88);
         border-radius: 14px;
         border: none;
-        color: #e0e0e0;
+        color: #d3c6aa;
       }
 
       tooltip {
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(39, 46, 51, 0.95);
         border: none;
         border-radius: 8px;
-        color: #e0e0e0;
+        color: #d3c6aa;
       }
 
       #workspaces {
@@ -165,130 +165,131 @@
 
       #workspaces button {
         padding: 6px 5px;
-        color: #b0b0b0;
+        color: #9da9a0;
         background: transparent;
         border-radius: 10px;
+        font-weight: normal;
         transition: all 0.2s ease;
       }
 
       #workspaces button.active {
-        color: #ffffff;
+        color: #7fbbb3;
         background: transparent;
       }
 
       #mpris {
         padding: 0 12px;
-        color: #b0b0b0;
+        color: #9da9a0;
         font-style: italic;
       }
 
       #mpris.playing {
-        color: #d0d0d0;
+        color: #d3c6aa;
       }
 
       #mpris.paused {
-        color: #909090;
+        color: #7a8478;
       }
 
       #clock {
         padding: 0 16px;
-        color: #e0e0e0;
+        color: #d3c6aa;
         letter-spacing: 0.5px;
       }
 
       #custom-dnd {
         padding: 0 10px;
-        color: #e0e0e0;
+        color: #d3c6aa;
       }
 
       #custom-theme {
         padding: 0 10px;
-        color: #e0e0e0;
+        color: #d3c6aa;
       }
 
       #idle_inhibitor {
         padding: 0 10px;
-        color: #707070;
+        color: #7a8478;
       }
 
       #idle_inhibitor.activated {
-        color: #d4a87a;
+        color: #e69875;
       }
 
       #cpu {
         padding: 0 10px;
-        color: #c0c0c0;
+        color: #9da9a0;
         transition: color 0.2s ease;
       }
 
       #memory {
         padding: 0 10px;
-        color: #c0c0c0;
+        color: #9da9a0;
         transition: color 0.2s ease;
       }
 
       #disk {
         padding: 0 10px;
-        color: #c0c0c0;
+        color: #9da9a0;
         transition: color 0.2s ease;
       }
 
       #cpu:hover,
       #memory:hover,
       #disk:hover {
-        color: #e0e0e0;
+        color: #d3c6aa;
       }
 
       #network {
         padding: 0 12px;
-        color: #c0c0c0;
+        color: #9da9a0;
         transition: color 0.2s ease;
       }
 
       #wireplumber {
         padding: 0 12px;
-        color: #c0c0c0;
+        color: #9da9a0;
         transition: color 0.2s ease;
       }
 
       #battery {
         padding: 0 12px;
-        color: #c0c0c0;
+        color: #9da9a0;
         transition: color 0.2s ease;
       }
 
       #battery.charging {
-        color: #d0d0d0;
+        color: #a7c080;
       }
 
       #battery.warning:not(.charging) {
-        color: #d4a87a;
+        color: #e69875;
       }
 
       #battery.critical:not(.charging) {
-        color: #d48a8a;
+        color: #e67e80;
       }
 
       #network.disconnected {
-        color: #707070;
+        color: #7a8478;
       }
 
       #wireplumber.muted {
-        color: #707070;
+        color: #7a8478;
       }
 
       #bluetooth {
         padding: 0 12px;
-        color: #c0c0c0;
+        color: #9da9a0;
         transition: color 0.2s ease;
       }
 
       #bluetooth.connected {
-        color: #e0e0e0;
+        color: #7fbbb3;
       }
 
       #bluetooth.disabled {
-        color: #707070;
+        color: #7a8478;
       }
 
       #tray {
@@ -308,15 +309,15 @@
       }
 
       #privacy-item.screenshare {
-        color: #32d74b;
+        color: #a7c080;
       }
 
       #privacy-item.audio-in {
-        color: #ff9f0a;
+        color: #e69875;
       }
 
       #privacy-item.audio-out {
-        color: #ff9f0a;
+        color: #e69875;
       }
     '';
   };

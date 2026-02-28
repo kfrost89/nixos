@@ -28,7 +28,7 @@ nixos-config/
 │   ├── niri.nix              # Niri compositor config (KDL via xdg.configFile)
 │   ├── waybar.nix            # Status bar (dynamic island: cpu, mem, disk, mpris, idle)
 │   ├── mako.nix              # Notification daemon
-│   ├── fuzzel.nix            # App launcher
+│   ├── fuzzel.nix            # App launcher (Everforest Dark)
 │   ├── espanso.nix           # Text expander (Wayland)
 │   ├── neovim.nix            # Neovim (LSP, treesitter, telescope, oil, conform)
 │   ├── swaylock.nix          # Lock screen
@@ -99,12 +99,19 @@ nixos-config/
 | `Super+Alt+L` | Lock screen |
 | `Print` | Screenshot |
 
-## Theme
+## Theme (Everforest Dark Hard)
 
-- Background: `#363636` (niri), `#1e1e1e` (foot)
-- Dynamic island: `rgba(0,0,0,0.85)` (waybar)
-- Text: `#e0e0e0` primary, `#888888` secondary
-- Terminal colors: muted desaturated palette (not pure monochrome)
+- Palette: Everforest Dark Hard across all configs
+- Background: `#272e33` (bg0), `#2e383c` (bg1), `#374145` (bg2), `#414b50` (bg3), `#495156` (bg4)
+- Shadow: `#1e2326` (bg_dim)
+- Text: `#d3c6aa` (fg), `#9da9a0` (grey2), `#859289` (grey1), `#7a8478` (grey0)
+- Red: `#e67e80` — errors, critical, wrong
+- Orange: `#e69875` — warnings, idle inhibitor
+- Yellow: `#dbbc7f`
+- Green: `#a7c080` — success, charging, match highlights
+- Aqua: `#83c092` — nix shell, cyan terminal
+- Blue: `#7fbbb3` — focus ring, active workspace, bluetooth
+- Purple: `#d699b6`
 - Font: Hack
 - GTK: adw-gtk3-dark, Papirus-Dark icons, Adwaita cursor 24px
 - No animations
