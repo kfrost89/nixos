@@ -50,7 +50,7 @@
       cmp_luasnip
 
       # theme
-      kanagawa-nvim
+      everforest
 
       # ui
       lualine-nvim
@@ -94,19 +94,10 @@
       vim.opt.scrolloff = 8
       vim.opt.updatetime = 250
 
-      require('kanagawa').setup({
-        compile = false,
-        undercurl = true,
-        commentStyle = { italic = false },
-        functionStyle = {},
-        keywordStyle = { italic = false },
-        statementStyle = { bold = true },
-        typeStyle = {},
-        transparent = false,
-        dimInactive = false,
-        theme = 'wave',
-      })
-      vim.cmd.colorscheme('kanagawa')
+      vim.g.everforest_background = 'hard'
+      vim.g.everforest_better_performance = 1
+      vim.g.everforest_disable_italic_comment = 1
+      vim.cmd.colorscheme('everforest')
 
       local map = vim.keymap.set
 
@@ -151,7 +142,7 @@
       map('n', '<leader>fb', require('telescope.builtin').buffers, { desc = "Buffers" })
 
       -- lualine
-      require('lualine').setup{ options = { theme = 'kanagawa' } }
+      require('lualine').setup{ options = { theme = 'everforest' } }
 
       -- gitsigns
       require('gitsigns').setup{}
