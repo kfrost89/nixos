@@ -53,6 +53,7 @@
 
       idle_inhibitor = {
         format = "{icon}";
+        start-activated = false;
         format-icons = {
           activated = "awake";
           deactivated = "sleep";

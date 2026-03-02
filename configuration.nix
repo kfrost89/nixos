@@ -37,7 +37,7 @@
 
   # Polkit authentication agent
   security.polkit.enable = true;
-  security.pam.services.swaylock = {};
+  security.pam.services.hyprlock = {};
 
   # Keyring
   services.gnome.gnome-keyring.enable = true;
@@ -112,8 +112,8 @@
     # wayland / niri
     xwayland-satellite # XWayland for niri
     polkit_gnome    # authentication popups
-    swaylock        # lock screen
-    swayidle        # idle management
+    hyprlock        # lock screen
+    hypridle        # idle management
     playerctl       # media keys
     pavucontrol     # audio GUI
     cliphist        # clipboard history

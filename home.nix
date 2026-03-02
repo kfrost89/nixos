@@ -110,8 +110,8 @@
       ./home/espanso.nix
       ./home/neovim.nix
       ./home/git.nix
-      ./home/swaylock.nix
-      ./home/swayidle.nix
+      ./home/hyprlock.nix
+      ./home/hypridle.nix
       ./home/fuzzel.nix
       ./home/firefox.nix
       ./home/scripts.nix
