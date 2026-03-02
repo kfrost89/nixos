@@ -200,6 +200,11 @@
 
   hardware.logitech.wireless.enable = true;
 
+  # NuPhy keyboard — allow WebHID access (drive.nuphy.io)
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", ATTRS{idVendor}=="19f5", MODE="0660", GROUP="input"
+  '';
+
   # Tailscale
   services.tailscale.enable = true;
 
