@@ -5,7 +5,7 @@
 - **Always use Home Manager** for app configs — never write dotfiles manually
 - Config files go in `home/` as separate `.nix` modules, imported in `home.nix`
 - Use `xdg.configFile` for apps without a Home Manager module (e.g. niri, espanso)
-- Use `programs.*` or `services.*` when Home Manager has native support (e.g. foot, fish, starship)
+- Use `programs.*` or `services.*` when Home Manager has native support (e.g. foot, fish, tide)
 - **Try before install**: Use `nix shell nixpkgs#<package>` to test apps temporarily instead of adding them to configuration.nix
 
 ## Overview
@@ -22,17 +22,22 @@ nixos-config/
 ├── disko-config.nix          # Disk layout: GPT + LUKS + Btrfs subvolumes
 ├── home.nix                  # Home Manager entry point (imports home/ modules)
 ├── home/
-│   ├── foot.nix              # Terminal emulator (Hack font, muted color palette)
-│   ├── fish.nix              # Fish shell (aliases: rebuild, update, rebuild-github)
-│   ├── starship.nix          # Shell prompt (minimal, ∷ symbol)
-│   ├── niri.nix              # Niri compositor config (KDL via xdg.configFile)
-│   ├── waybar.nix            # Status bar (dynamic island: cpu, mem, disk, mpris, idle)
-│   ├── mako.nix              # Notification daemon
-│   ├── fuzzel.nix            # App launcher (Everforest Dark)
 │   ├── espanso.nix           # Text expander (Wayland)
+│   ├── fastfetch.nix         # System info fetch
+│   ├── firefox.nix           # Browser config
+│   ├── fish.nix              # Fish shell (aliases: rebuild, update, rebuild-github)
+│   ├── foot.nix              # Terminal emulator (Hack font, muted color palette)
+│   ├── fuzzel.nix            # App launcher (Everforest Dark)
+│   ├── git.nix               # Git config
+│   ├── hypridle.nix          # Idle management
+│   ├── hyprlock.nix          # Lock screen
+│   ├── mako.nix              # Notification daemon
 │   ├── neovim.nix            # Neovim (LSP, treesitter, telescope, oil, conform)
-│   ├── swaylock.nix          # Lock screen
-│   ├── swayidle.nix          # Idle management (lock 5min, monitors off 10min)
+│   ├── niri.nix              # Niri compositor config (KDL via xdg.configFile)
+│   ├── scripts.nix           # Custom scripts
+│   ├── theme.nix             # GTK/cursor theme
+│   ├── tide.nix              # Fish prompt (tide, Everforest Dark, ∷ symbol)
+│   ├── waybar.nix            # Status bar (dynamic island: cpu, mem, disk, mpris, idle)
 ├── hosts/
 │   ├── x270/
 │   │   ├── x270.nix          # ThinkPad X270: Intel GPU, TLP, thermald, trackpoint
