@@ -4,7 +4,7 @@
     server.enable = true;
     settings = {
       main = {
-        font = "Hack:size=11";
+        font = "Hack Nerd Font:size=11";
         pad = "12x12 center";
       };
       colors = {

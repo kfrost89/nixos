@@ -29,6 +29,7 @@
     set -U tide_pwd_color_truncated_dirs 7fbbb3
 
     # Git
+    set -U tide_git_icon
     set -U tide_git_color_branch 9da9a0
     set -U tide_git_color_upstream 9da9a0
     set -U tide_git_color_stash 9da9a0
@@ -37,6 +38,16 @@
     set -U tide_git_color_untracked 9da9a0
     set -U tide_git_color_conflicted e67e80
     set -U tide_git_color_operation e67e80
+    set -U tide_git_truncation_character …
+
+    # Git state icons
+    set -U tide_git_stash_icon " 󰆓"
+    set -U tide_git_ahead_icon " "
+    set -U tide_git_behind_icon " "
+    set -U tide_git_dirty_icon " "
+    set -U tide_git_staged_icon " "
+    set -U tide_git_untracked_icon " "
+    set -U tide_git_conflicted_icon " "
 
     # Nix shell
     set -U tide_nix_shell_color 83c092
