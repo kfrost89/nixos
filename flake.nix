@@ -10,9 +10,13 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, disko, home-manager, ... }:
+  outputs = { nixpkgs, nixpkgs-unstable, disko, home-manager, firefox-addons, ... }:
   let
     unstable = import nixpkgs-unstable {
       system = "x86_64-linux";
@@ -23,7 +27,7 @@
       system = "x86_64-linux";
       specialArgs = {
         disk = "/dev/nvme0n1";
-        inherit unstable;
+        inherit unstable firefox-addons;
       };
       modules = [
         disko.nixosModules.disko
@@ -40,7 +44,7 @@
       system = "x86_64-linux";
       specialArgs = {
         disk = "/dev/nvme0n1";
-        inherit unstable;
+        inherit unstable firefox-addons;
       };
       modules = [
         disko.nixosModules.disko

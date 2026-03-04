@@ -1,11 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, firefox-addons, ... }:
 
 {
-  programs.firefox = {
+  programs.librewolf = {
     enable = true;
     languagePacks = [ "da" "en-US" ];
     profiles.default = {
       isDefault = true;
+      extensions.packages = with firefox-addons.packages.x86_64-linux; [
+        bitwarden
+        vimium
+      ];
       settings = {
         # Fonts — macOS style
         "font.name.serif.x-western" = "Noto Serif";

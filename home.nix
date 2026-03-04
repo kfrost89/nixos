@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, firefox-addons, ... }:
 
 {
+  home-manager.extraSpecialArgs = { inherit firefox-addons; };
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.backupFileExtension = "backup";
@@ -60,9 +61,9 @@
       enable = true;
       defaultApplications = {
         # Browser
-        "text/html" = "firefox.desktop";
-        "x-scheme-handler/http" = "firefox.desktop";
-        "x-scheme-handler/https" = "firefox.desktop";
+        "text/html" = "librewolf.desktop";
+        "x-scheme-handler/http" = "librewolf.desktop";
+        "x-scheme-handler/https" = "librewolf.desktop";
 
         # PDF
         "application/pdf" = "org.pwmt.zathura.desktop";
