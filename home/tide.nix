@@ -12,7 +12,7 @@
     # Tide prompt — Everforest Dark
     # Must use -U (universal) because tide renders the prompt in a background
     # subprocess that doesn't inherit global variables.
-    set -U tide_left_prompt_items pwd git nix_shell cmd_duration newline character
+    set -U tide_left_prompt_items git nix_shell cmd_duration character
     set -U tide_right_prompt_items
 
     # Prompt character
@@ -48,6 +48,12 @@
     set -U tide_cmd_duration_decimals 0
 
     # Layout
+    set -U tide_left_prompt_frame_enabled false
+    set -U tide_right_prompt_frame_enabled false
+    set -U tide_left_prompt_separator_diff_color " "
+    set -U tide_left_prompt_separator_same_color " "
+    set -U tide_left_prompt_prefix ""
+    set -U tide_left_prompt_suffix ""
     set -U tide_prompt_add_newline_before false
   '';
 }
