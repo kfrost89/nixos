@@ -141,7 +141,7 @@
       Mod+T { spawn "footclient"; }
       Mod+Return { spawn "footclient"; }
       Mod+B { spawn "librewolf"; }
-      Mod+Shift+B { spawn "librewolf" "--private-window"; }
+      Mod+Shift+B { spawn "librewolf" "-P" "private"; }
       Mod+E { spawn "nautilus"; }
       Mod+D { spawn "fuzzel"; }
       Mod+S { spawn "signal-desktop"; }
