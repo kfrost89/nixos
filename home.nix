@@ -105,7 +105,7 @@
       ./home/niri.nix
       ./home/waybar.nix
       ./home/mako.nix
-      ./home/starship.nix
+      ./home/tide.nix
       ./home/fastfetch.nix
       ./home/espanso.nix
       ./home/neovim.nix
