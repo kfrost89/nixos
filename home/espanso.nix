@@ -24,7 +24,7 @@
           - name: date
             type: date
             params:
-              format: "%m-%d-%Y"
+              format: "%Y-%m-%d"
 
       - trigger: ":time"
         replace: "{{time}}"
@@ -40,7 +40,7 @@
           - name: yesterday
             type: date
             params:
-              format: "%m-%d-%Y"
+              format: "%Y-%m-%d"
               offset: -86400
 
       - trigger: ":tom"
@@ -49,7 +49,7 @@
           - name: tomorrow
             type: date
             params:
-              format: "%m-%d-%Y"
+              format: "%Y-%m-%d"
               offset: 86400
   '';
 }
