@@ -98,7 +98,7 @@
     }
 
     window-rule {
-      match app-id=r#"librewolf$"#
+      match app-id=r#"firefox$"#
       default-column-width { proportion 0.66667; }
       open-on-workspace "browser"
     }
@@ -127,7 +127,7 @@
     }
 
     window-rule {
-      match app-id=r#"librewolf$"# title="^Picture-in-Picture$"
+      match app-id=r#"firefox$"# title="^Picture-in-Picture$"
       open-floating true
     }
 
@@ -140,8 +140,8 @@
       // Apps
       Mod+T { spawn "footclient"; }
       Mod+Return { spawn "footclient"; }
-      Mod+B { spawn "librewolf"; }
-      Mod+Shift+B { spawn "librewolf" "-P" "private"; }
+      Mod+B { spawn "firefox"; }
+      Mod+Shift+B { spawn "firefox" "--private-window"; }
       Mod+E { spawn "nautilus"; }
       Mod+D { spawn "fuzzel"; }
       Mod+S { spawn "signal-desktop"; }

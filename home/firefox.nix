@@ -1,7 +1,7 @@
 { pkgs, firefox-addons, ... }:
 
 {
-  programs.librewolf = {
+  programs.firefox = {
     enable = true;
     languagePacks = [ "da" "en-US" ];
     profiles.default = {
