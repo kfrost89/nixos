@@ -47,6 +47,14 @@
         # New tabs open next to current
         "browser.tabs.insertAfterCurrent" = true;
 
+        # Disable resistFingerprinting (fixes timezone, theme, canvas)
+        "privacy.resistFingerprinting" = false;
+
+        # Keep cookies and sessions across restarts
+        "privacy.clearOnShutdown.cookies" = false;
+        "privacy.clearOnShutdown.offlineApps" = false;
+        "network.cookie.lifetimePolicy" = 0;
+
         # Smooth scrolling
         "general.smoothScroll" = true;
         "mousewheel.default.delta_multiplier_y" = 200;
