@@ -115,6 +115,7 @@
       ./home/hypridle.nix
       ./home/fuzzel.nix
       ./home/firefox.nix
+      ./home/librewolf.nix
       ./home/scripts.nix
       ./home/theme.nix
     ];
