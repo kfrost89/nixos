@@ -104,7 +104,7 @@
     }
 
     window-rule {
-      match app-id="Signal"
+      match app-id="signal"
       default-column-width { proportion 0.33333; }
       open-on-workspace "misc"
     }
